@@ -99,8 +99,15 @@
     [self.view addSubview:closeButton];
     NSDictionary *views = @{@"button" : closeButton};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[button(==30)]-5-|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[button(==30)]" options:0 metrics:nil views:views]];
     
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[button(==50)]" options:0 metrics:nil views:views]];
+
+    }
+    else {
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[button(==30)]" options:0 metrics:nil views:views]];
+
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -1384,6 +1384,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = ericli;
+				TargetAttributes = {
+					5888A9801794E07600E57A46 = {
+						DevelopmentTeam = 2J62DTH957;
+					};
+				};
 			};
 			buildConfigurationList = 5888A97C1794E07600E57A46 /* Build configuration list for PBXProject "ReliefLink" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1713,8 +1718,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "Anchor/ReliefLink-Info.plist";
@@ -1735,8 +1740,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "Anchor/ReliefLink-Info.plist";

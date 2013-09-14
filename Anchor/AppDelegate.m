@@ -35,9 +35,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [[ANDataStoreCoordinator shared] setManagedObjectContext:[self managedObjectContext]];
     
-#if defined (DEBUG_FEATURE)
-    [[[ANDataStoreCoordinator shared] createDemoData];
-#endif
+    [[ANDataStoreCoordinator shared] createDemoData];
 
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
