@@ -38,6 +38,7 @@ static NSString *CellIdentifier = @"NavigationCell";
 @property (retain, nonatomic) IBOutlet UIView *buttonContainerView;
 @property (retain, nonatomic) IBOutlet UIButton *settingsButton;
 @property (nonatomic, retain) UIButton *button1, *button2, *button3, *button4, *button5, *button6;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *headerViewHeightConstraint;
 @end
 
 @implementation ANNavigationViewController
@@ -54,6 +55,13 @@ static NSString *CellIdentifier = @"NavigationCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _headerViewHeightConstraint.constant = 110.0;
+    }
+    else {
+        _headerViewHeightConstraint.constant = 90.0;
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfilePicture:) name:kProfilePictureDidChangeNotification object:nil];
     
@@ -117,6 +125,7 @@ static NSString *CellIdentifier = @"NavigationCell";
     [_button6 release];
     [_settingsButton release];
     [_nameLabel release];
+    [_headerViewHeightConstraint release];
     [super dealloc];
 }
 

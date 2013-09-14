@@ -17,6 +17,7 @@
 @interface ResourceViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIView *titleBar;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @end
 
@@ -34,6 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
+    
     [_tableView registerNib:[UINib nibWithNibName:@"ResourceCell" bundle:nil] forCellReuseIdentifier:@"ResourceCell"];
 }
 
@@ -52,6 +61,7 @@
     [_tableView release];
     [_titleBar release];
     [_launchOption release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

@@ -62,6 +62,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 
 @property (nonatomic, retain) ZLTimelineGraph *timelineGraph;
 @property (nonatomic, retain) NSString *latestMood;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *coverViewHeightConstraint;
 @end
 
 @implementation ANLandingViewController
@@ -81,6 +82,14 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _coverViewHeightConstraint.constant = 160.0;
+    }
+    else {
+        _coverViewHeightConstraint.constant = 140.0;
+    }
+    
     [_tableView registerNib:[UINib nibWithNibName:@"SingleGridCell" bundle:nil] forCellReuseIdentifier:SingleGridCellIdentifier];
     [_tableView registerNib:[UINib nibWithNibName:@"DualGridCell" bundle:nil] forCellReuseIdentifier:DualGridCellIdentifier];
     
@@ -147,6 +156,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
     [_mapAnnotations release];
     [_timelineGraph release];
     [_latestMood release];
+    [_coverViewHeightConstraint release];
     [super dealloc];
 }
 
@@ -589,7 +599,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    _coverImageSizeCache = CGSizeMake(self.view.frame.size.width, 140);
+    _coverImageSizeCache = CGSizeMake(self.view.frame.size.width, _coverViewHeightConstraint.constant);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

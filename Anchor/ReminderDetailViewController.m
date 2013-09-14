@@ -28,6 +28,7 @@
 @property (retain, nonatomic) IBOutlet NSLayoutConstraint *pickerViewBottomConstraint;
 
 @property (nonatomic, retain) UILocalNotification *currentNotification;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation ReminderDetailViewController
@@ -44,6 +45,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
+    
     [_tableView registerNib:[UINib nibWithNibName:@"ZLEditCell" bundle:nil] forCellReuseIdentifier:@"ZLEditCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"ZLExpandableEditCell" bundle:nil] forCellReuseIdentifier:@"ZLExpandableEditCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"ZLSwitchCell" bundle:nil] forCellReuseIdentifier:@"ZLSwitchCell"];
@@ -77,6 +86,7 @@
     [_datePicker release];
     [_repeatTypePicker release];
     [_pickerViewBottomConstraint release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

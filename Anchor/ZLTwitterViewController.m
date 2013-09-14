@@ -27,6 +27,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *refreshButton;
 @property (retain, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, retain) UIWebView *webView;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation ZLTwitterViewController
@@ -49,6 +50,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
+    
     _currentPage = 0;
     
     _tableView.frame = _containerScrollView.bounds;
@@ -82,6 +91,10 @@
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)dealloc
 {
     [_tableView release];
@@ -94,6 +107,7 @@
     [_loadingIndicator release];
     [_refreshButton release];
     [_closeButton release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

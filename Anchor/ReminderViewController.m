@@ -13,12 +13,14 @@
 
 #import "ANDataStoreCoordinator.h"
 #import "ANAddItemCell.h"
+#import "ANCommons.h"
 
 @interface ReminderViewController () <UITableViewDelegate, UITableViewDataSource, ReminderDetailViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIButton *editButton;
 @property (retain, nonatomic) IBOutlet UIButton *addButton;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation ReminderViewController
@@ -35,6 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
+    
     [_tableView registerNib:[UINib nibWithNibName:@"ANAddItemCell" bundle:nil] forCellReuseIdentifier:@"ANAddItemCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"ANReminderCell" bundle:nil] forCellReuseIdentifier:@"ANReminderCell"];
     
@@ -61,6 +71,7 @@
     [_editButton release];
     [_addButton release];
     [_fetchedResultsController release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

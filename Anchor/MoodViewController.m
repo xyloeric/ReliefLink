@@ -13,6 +13,7 @@
 #import "ANDataStoreCoordinator.h"
 #import "UIImage+ANUniversalImage.h"
 #import "ImageAndTitleCell.h"
+#import "ANCommons.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Social/Social.h>
 
@@ -27,6 +28,7 @@
 @property (retain, nonatomic) IBOutlet UITableView *promptTableView;
 @property (retain, nonatomic) NSArray *promptViewVerticalConstraints;
 @property (nonatomic, retain) UIView *coverView;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation MoodViewController
@@ -43,6 +45,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -83,6 +92,7 @@
     [_promptViewVerticalConstraints release];
     [_coverView release];
     [_promptTableView release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

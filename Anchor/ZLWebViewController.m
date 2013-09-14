@@ -7,6 +7,7 @@
 #import "ZLWebViewController.h"
 
 @interface ZLWebViewController () <UIWebViewDelegate, UIScrollViewDelegate>
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 
 @end
 
@@ -24,6 +25,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 50.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 30.0;
+    }
+    
+    
     _webView.scalesPageToFit = YES;
     _titleLabel.text = self.title;
     
@@ -46,12 +56,17 @@
     [_titleBarColor release];
     [_titleBar release];
     [_footerBar release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 
 - (void)viewDidUnload {
     [self setLoadingIndicator:nil];
     [super viewDidUnload];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)shouldAutorotate

@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *button4;
 
 @property (retain, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation MoodEntryViewController
@@ -34,6 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
+    
     _button1.tag = 1;
     [_button1 addTarget:self action:@selector(moodButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -70,6 +79,7 @@
     [_button3 release];
     [_button4 release];
     [_contentScrollView release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 

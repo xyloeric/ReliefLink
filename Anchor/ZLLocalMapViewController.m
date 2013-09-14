@@ -34,6 +34,7 @@
 
 @property (nonatomic, retain) MKMapItem *selectedItem;
 @property (nonatomic, retain) ProfessionalToContact *editingProfessional;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
 @end
 
 @implementation ZLLocalMapViewController
@@ -50,6 +51,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        _titleHeightConstraint.constant = 64.0;
+    }
+    else {
+        _titleHeightConstraint.constant = 44.0;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -73,6 +81,10 @@
 
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -93,6 +105,7 @@
     [_selectedItem release];
     [_detailView release];
     [_editingProfessional release];
+    [_titleHeightConstraint release];
     [super dealloc];
 }
 
