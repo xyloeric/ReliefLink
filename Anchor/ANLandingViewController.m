@@ -124,6 +124,11 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
     [_tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -647,6 +652,8 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
         }
         
         _firstload = NO;
+        
+        [_tableView reloadData];
     }
 }
 
