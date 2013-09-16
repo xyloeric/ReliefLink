@@ -185,6 +185,7 @@
 		5888A9FE1797126100E57A46 /* MoodEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5888A9FC1797126100E57A46 /* MoodEntryViewController.xib */; };
 		5888AA1117973C7E00E57A46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5888AA1017973C7E00E57A46 /* QuartzCore.framework */; };
 		58923B5317E4CA3800B59C25 /* libZLKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58923B5217E4CA3800B59C25 /* libZLKit.a */; };
+		58923BB017E77DE800B59C25 /* image_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 58923BAF17E77DE800B59C25 /* image_120.png */; };
 		58A091D317988FB4005F049A /* SingleGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A091D217988FB4005F049A /* SingleGridCell.m */; };
 		58A091D617988FC3005F049A /* DualGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A091D517988FC3005F049A /* DualGridCell.m */; };
 		58A091D817989100005F049A /* SingleGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A091D717989100005F049A /* SingleGridCell.xib */; };
@@ -485,6 +486,7 @@
 		5888AA1017973C7E00E57A46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		58923B5117E4C8B800B59C25 /* ZLGraphSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLGraphSetting.h; sourceTree = "<group>"; };
 		58923B5217E4CA3800B59C25 /* libZLKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZLKit.a; sourceTree = "<group>"; };
+		58923BAF17E77DE800B59C25 /* image_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_120.png; sourceTree = "<group>"; };
 		58A091D117988FB4005F049A /* SingleGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGridCell.h; sourceTree = "<group>"; };
 		58A091D217988FB4005F049A /* SingleGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGridCell.m; sourceTree = "<group>"; };
 		58A091D417988FC3005F049A /* DualGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DualGridCell.h; sourceTree = "<group>"; };
@@ -1095,6 +1097,7 @@
 		5888A9781794E07600E57A46 = {
 			isa = PBXGroup;
 			children = (
+				58923BAF17E77DE800B59C25 /* image_120.png */,
 				58DF1A2017B43F2000039B4D /* AppIcon.png */,
 				58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */,
 				078F567717B36CA8000F4895 /* Default.png */,
@@ -1517,6 +1520,7 @@
 				5810FEFA17A61160003E3297 /* ANSelectionViewController.xib in Resources */,
 				5810FF0117A616A3003E3297 /* ANSelectionCell.xib in Resources */,
 				5810FF0417A61EF1003E3297 /* icon_cell_add60@2x.png in Resources */,
+				58923BB017E77DE800B59C25 /* image_120.png in Resources */,
 				5810FF0517A61EF1003E3297 /* icon_cell_add60.png in Resources */,
 				5810FF0B17A61F4C003E3297 /* ANAddItemCell.xib in Resources */,
 				5810FF1317A639BD003E3297 /* ZLMusicPlayerViewController.xib in Resources */,
