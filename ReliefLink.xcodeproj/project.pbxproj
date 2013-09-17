@@ -186,6 +186,7 @@
 		5888AA1117973C7E00E57A46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5888AA1017973C7E00E57A46 /* QuartzCore.framework */; };
 		58923B5317E4CA3800B59C25 /* libZLKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58923B5217E4CA3800B59C25 /* libZLKit.a */; };
 		58923BB017E77DE800B59C25 /* image_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 58923BAF17E77DE800B59C25 /* image_120.png */; };
+		58923BB417E8C54600B59C25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58923BB317E8C54600B59C25 /* Images.xcassets */; };
 		58A091D317988FB4005F049A /* SingleGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A091D217988FB4005F049A /* SingleGridCell.m */; };
 		58A091D617988FC3005F049A /* DualGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A091D517988FC3005F049A /* DualGridCell.m */; };
 		58A091D817989100005F049A /* SingleGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A091D717989100005F049A /* SingleGridCell.xib */; };
@@ -237,6 +238,13 @@
 			containerPortal = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4C6F96C414AF704100F8389A;
+			remoteInfo = MWPhotoBrowser;
+		};
+		58923BB117E8C51000B59C25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C6F96C314AF704100F8389A;
 			remoteInfo = MWPhotoBrowser;
 		};
 /* End PBXContainerItemProxy section */
@@ -487,6 +495,7 @@
 		58923B5117E4C8B800B59C25 /* ZLGraphSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLGraphSetting.h; sourceTree = "<group>"; };
 		58923B5217E4CA3800B59C25 /* libZLKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZLKit.a; sourceTree = "<group>"; };
 		58923BAF17E77DE800B59C25 /* image_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_120.png; sourceTree = "<group>"; };
+		58923BB317E8C54600B59C25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ReliefLink/Images.xcassets; sourceTree = "<group>"; };
 		58A091D117988FB4005F049A /* SingleGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleGridCell.h; sourceTree = "<group>"; };
 		58A091D217988FB4005F049A /* SingleGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleGridCell.m; sourceTree = "<group>"; };
 		58A091D417988FC3005F049A /* DualGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DualGridCell.h; sourceTree = "<group>"; };
@@ -1097,6 +1106,7 @@
 		5888A9781794E07600E57A46 = {
 			isa = PBXGroup;
 			children = (
+				58923BB317E8C54600B59C25 /* Images.xcassets */,
 				58923BAF17E77DE800B59C25 /* image_120.png */,
 				58DF1A2017B43F2000039B4D /* AppIcon.png */,
 				58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */,
@@ -1373,6 +1383,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				58923BB217E8C51000B59C25 /* PBXTargetDependency */,
 			);
 			name = ReliefLink;
 			productName = Anchor;
@@ -1389,7 +1400,7 @@
 				ORGANIZATIONNAME = ericli;
 				TargetAttributes = {
 					5888A9801794E07600E57A46 = {
-						DevelopmentTeam = 2J62DTH957;
+						DevelopmentTeam = 3J5U24XCXH;
 					};
 				};
 			};
@@ -1467,6 +1478,7 @@
 				58625CF3179DCC8600F22B82 /* 1.jpg in Resources */,
 				58625CF4179DCC8600F22B82 /* 2.jpg in Resources */,
 				58625CF5179DCC8600F22B82 /* 3.jpg in Resources */,
+				58923BB417E8C54600B59C25 /* Images.xcassets in Resources */,
 				58625CF6179DCC8600F22B82 /* 4.jpg in Resources */,
 				58625CF7179DCC8600F22B82 /* 5.jpg in Resources */,
 				0746B8FB17A2698500B02894 /* icon_x_white1.png in Resources */,
@@ -1652,6 +1664,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		58923BB217E8C51000B59C25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MWPhotoBrowser;
+			targetProxy = 58923BB117E8C51000B59C25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5888A98F1794E07700E57A46 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1722,6 +1742,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1734,8 +1756,8 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = ReliefLink;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "0F850152-11D2-4D2B-85D4-0FD6DFD603AD";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0F850152-11D2-4D2B-85D4-0FD6DFD603AD";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1745,6 +1767,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1757,8 +1781,8 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = ReliefLink;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "E11621C5-8700-4C83-8DF4-56B808192019";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E11621C5-8700-4C83-8DF4-56B808192019";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
 				WRAPPER_EXTENSION = app;
 			};
