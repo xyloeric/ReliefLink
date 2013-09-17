@@ -195,10 +195,13 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
             [temp addObject:@{@"date": mood.recordDate, @"value": [NSString stringWithFormat:@"%@", mood.moodType]}];
         }
 
-        [data addObject:temp];        
+        [data addObject:temp];
+        
+        _latestMood = [self getMoodDescriptionFromType:moods[0]];
     }
-    
-    _latestMood = [self getMoodDescriptionFromType:moods[0]];
+    else {
+        _latestMood = @"N/A";
+    }
 
     request = [[NSFetchRequest alloc] initWithEntityName:@"SuicidalThought"];
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"recordDate" ascending:NO];
