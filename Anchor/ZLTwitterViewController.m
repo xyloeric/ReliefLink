@@ -182,6 +182,13 @@
                     [self startStreamWithAccount:account forTimelineOfUser:username];
                 }
             }
+            else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                    [vc setInitialText:@"Hello from @relieflink"];
+                    [self presentViewController:vc animated:NO completion:^{}];
+                });
+            }
         }
         else {
             dispatch_async(dispatch_get_main_queue(), ^{                
@@ -329,7 +336,7 @@
 #pragma mark - NSURLConnectionDataDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSString *key = [_connectionDict allKeysForObject:connection][0];
+    NSString *key = [[_connectionDict allKeysForObject:connection] firstObject];
     NSMutableData *dataContainer = [_dataDict valueForKey:key];
     
     [dataContainer appendData:data];
@@ -340,7 +347,7 @@
     [_loadingIndicator stopAnimating];
     _refreshButton.hidden = NO;
     
-    NSString *key = [_connectionDict allKeysForObject:connection][0];
+    NSString *key = [[_connectionDict allKeysForObject:connection] firstObject];
     NSMutableData *dataContainer = [_dataDict valueForKey:key];
     
     NSError *error = nil;
