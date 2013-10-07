@@ -2248,6 +2248,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E0A7366-1F8E-498D-A15D-9C4E320005C2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2274,6 +2275,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E67FFBC6-5B8B-4FE7-BA9C-A06050F69166";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2352,6 +2354,7 @@
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "E66E80EB-41E3-4094-941D-4737E188AE1A";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2378,6 +2381,7 @@
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "90DC27D0-C3A8-4A32-BE4F-318C0347C504";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
