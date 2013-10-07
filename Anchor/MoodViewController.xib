@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoodViewController">
             <connections>
-                <outlet property="modeSwitchButton" destination="45" id="63"/>
                 <outlet property="promptTableView" destination="142" id="153"/>
                 <outlet property="promptView" destination="67" id="106"/>
                 <outlet property="tableView" destination="29" id="38"/>
@@ -94,24 +93,18 @@
                         <outlet property="delegate" destination="-1" id="40"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45">
-                    <rect key="frame" x="0.0" y="44" width="320" height="36"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cjx-0U-whm">
+                    <rect key="frame" x="20" y="48" width="280" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="124"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Suicidal Tought">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <segments>
+                        <segment title="Mood"/>
+                        <segment title="Suicidal Thought"/>
+                    </segments>
+                    <color key="tintColor" red="0.94117653369999998" green="0.61568629740000003" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
                     <connections>
-                        <action selector="modeSwitchButtonClicked:" destination="-1" eventType="touchUpInside" id="64"/>
+                        <action selector="modeSwitchButtonClicked:" destination="-1" eventType="valueChanged" id="OUc-5k-4Gt"/>
                     </connections>
-                </button>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -121,10 +114,10 @@
                 <constraint firstItem="29" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="30"/>
                 <constraint firstItem="29" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="34"/>
                 <constraint firstItem="29" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="35"/>
-                <constraint firstItem="45" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="121"/>
-                <constraint firstItem="45" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="123"/>
-                <constraint firstItem="29" firstAttribute="top" secondItem="45" secondAttribute="bottom" id="StC-Va-mur"/>
-                <constraint firstItem="45" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="aXk-to-6Xf"/>
+                <constraint firstItem="cjx-0U-whm" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="4" id="FTE-cj-Lsx"/>
+                <constraint firstAttribute="trailing" secondItem="cjx-0U-whm" secondAttribute="trailing" constant="20" id="U3f-g6-Vt2"/>
+                <constraint firstItem="29" firstAttribute="top" secondItem="cjx-0U-whm" secondAttribute="bottom" constant="4" id="UIz-LZ-t6B"/>
+                <constraint firstItem="cjx-0U-whm" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="jPo-Lo-J3E"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

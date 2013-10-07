@@ -492,7 +492,7 @@
 		0746B91317A7AE0700B02894 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		0746B91717A7B29A00B02894 /* F3BarGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3BarGauge.h; sourceTree = "<group>"; };
 		0746B91817A7B29A00B02894 /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
-		0782F57B1802693900EEC943 /* ReliefLink copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReliefLink copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0782F57B1802693900EEC943 /* ReliefLink beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReliefLink beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782F57C1802693A00EEC943 /* ReliefLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ReliefLink copy-Info.plist"; path = "/Users/eric/Documents/ReliefLink/ReliefLink copy-Info.plist"; sourceTree = "<absolute>"; };
 		078F567317B36BC8000F4895 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		078F567517B36C89000F4895 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -1391,7 +1391,7 @@
 			isa = PBXGroup;
 			children = (
 				5888A9811794E07600E57A46 /* ReliefLink.app */,
-				0782F57B1802693900EEC943 /* ReliefLink copy.app */,
+				0782F57B1802693900EEC943 /* ReliefLink beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1644,7 +1644,7 @@
 			);
 			name = "ReliefLink beta";
 			productName = Anchor;
-			productReference = 0782F57B1802693900EEC943 /* ReliefLink copy.app */;
+			productReference = 0782F57B1802693900EEC943 /* ReliefLink beta.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5888A9801794E07600E57A46 /* ReliefLink */ = {
@@ -2203,7 +2203,7 @@
 					"$(SRCROOT)/Anchor",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "ReliefLink copy";
+				PRODUCT_NAME = "ReliefLink beta";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E0A7366-1F8E-498D-A15D-9C4E320005C2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
@@ -2228,7 +2228,7 @@
 					"$(SRCROOT)/Anchor",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "ReliefLink copy";
+				PRODUCT_NAME = "ReliefLink beta";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E67FFBC6-5B8B-4FE7-BA9C-A06050F69166";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";

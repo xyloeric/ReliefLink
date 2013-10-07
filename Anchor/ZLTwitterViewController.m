@@ -240,6 +240,20 @@
     return 2;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"Tweets from us";
+            break;
+        case 1:
+            return @"Tweets from other friends";
+            break;
+        default:
+            return nil;
+            break;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
@@ -362,7 +376,12 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if ([key isEqualToString:@"relieflink"]) {
-                self.reliefLinkTweets = result;
+                if ([result count] > 10) {
+                    self.reliefLinkTweets = [result subarrayWithRange:NSMakeRange(0, 10)];
+                }
+                else {
+                    self.reliefLinkTweets = result;
+                }
             }
             else {
                 [_tweets addObjectsFromArray:result];

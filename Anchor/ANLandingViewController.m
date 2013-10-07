@@ -492,24 +492,19 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
             return nil;
             break;
         case 1:
         {
-            ZLTableSectionHeaderView *view = [[[ZLTableSectionHeaderView alloc] initDarkStyleWithFrame:CGRectMake(0, 0, 320, 20) textAlignment:NSTextAlignmentCenter] autorelease];
-            [view setText:@"Health Centers"];
-            return view;
+            return @"Health Centers";
         }
             break;
         case 2:
         {
-            ZLTableSectionHeaderView *view = [[[ZLTableSectionHeaderView alloc] initLightStyleWithFrame:CGRectMake(0, 0, 320, 20) textAlignment:NSTextAlignmentCenter] autorelease];
-            [view setText:@"Mood Trends"];
-            return view;
+            return @"Mood Trends (Last 20 Records)";
         }
             break;
         default:
@@ -519,6 +514,34 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
             break;
     }
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    switch (section) {
+//        case 0:
+//            return nil;
+//            break;
+//        case 1:
+//        {
+//            ZLTableSectionHeaderView *view = [[[ZLTableSectionHeaderView alloc] initDarkStyleWithFrame:CGRectMake(0, 0, 320, 20) textAlignment:NSTextAlignmentCenter] autorelease];
+//            [view setText:@"Health Centers"];
+//            return view;
+//        }
+//            break;
+//        case 2:
+//        {
+//            ZLTableSectionHeaderView *view = [[[ZLTableSectionHeaderView alloc] initLightStyleWithFrame:CGRectMake(0, 0, 320, 20) textAlignment:NSTextAlignmentCenter] autorelease];
+//            [view setText:@"Mood Trends"];
+//            return view;
+//        }
+//            break;
+//        default:
+//        {
+//            return nil;
+//        }
+//            break;
+//    }
+//}
 
 #pragma mark - UITableViewDelegate
 

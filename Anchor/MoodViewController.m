@@ -106,19 +106,16 @@
     [self.delegate ANDetailViewControllerDidClickHomeButton:self];
 }
 
-- (IBAction)modeSwitchButtonClicked:(id)sender
+- (IBAction)modeSwitchButtonClicked:(UISegmentedControl *)sender
 {
-    if (_moodMode == 0) {
-        self.moodMode = 1;
-        [_modeSwitchButton setTitle:@"Suicidal Thought" forState:UIControlStateNormal];
-        
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
-    }
-    else {
-        self.moodMode = 0;
-        [_modeSwitchButton setTitle:@"Mood" forState:UIControlStateNormal];
-        
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft];
+    self.moodMode = sender.selectedSegmentIndex;
+    switch (_moodMode) {
+        case 0:
+            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationLeft];
+            break;
+        case 1:
+            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
+            break;
     }
 }
 
