@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "ANDataStoreCoordinator.h"
+#import "Crittercism.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *viewController;
@@ -55,6 +56,7 @@
         [[ANDataStoreCoordinator shared] refreshScheduledStatusOfReminders];
     }
     
+    [Crittercism enableWithAppID: @"5252405e46b7c22b4c000007"];
     
     return YES;
 }

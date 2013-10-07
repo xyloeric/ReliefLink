@@ -240,6 +240,12 @@
 		0782F5751802693900EEC943 /* Mindfulness.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 58C3852E17B4B99300DB75D6 /* Mindfulness.m4a */; };
 		0782F5761802693900EEC943 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568417B4C02D000F4895 /* icon_play.png */; };
 		0782F5771802693900EEC943 /* icon_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568517B4C02D000F4895 /* icon_pause.png */; };
+		0782F584180278B600EEC943 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0782F582180278B600EEC943 /* dsym_upload.sh */; };
+		0782F585180278B600EEC943 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0782F582180278B600EEC943 /* dsym_upload.sh */; };
+		0782F586180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */; };
+		0782F587180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */; };
+		0782F5891802793200EEC943 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F5881802793200EEC943 /* SystemConfiguration.framework */; };
+		0782F58A1802793E00EEC943 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F5881802793200EEC943 /* SystemConfiguration.framework */; };
 		078F567417B36BC8000F4895 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F567317B36BC8000F4895 /* Default-568h@2x.png */; };
 		078F567617B36C89000F4895 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F567517B36C89000F4895 /* Default@2x.png */; };
 		078F567817B36CA8000F4895 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F567717B36CA8000F4895 /* Default.png */; };
@@ -494,6 +500,12 @@
 		0746B91817A7B29A00B02894 /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
 		0782F57B1802693900EEC943 /* ReliefLink beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReliefLink beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782F57C1802693A00EEC943 /* ReliefLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ReliefLink copy-Info.plist"; path = "/Users/eric/Documents/ReliefLink/ReliefLink copy-Info.plist"; sourceTree = "<absolute>"; };
+		0782F57F180278B600EEC943 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		0782F580180278B600EEC943 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		0782F581180278B600EEC943 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		0782F582180278B600EEC943 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_7.a; sourceTree = "<group>"; };
+		0782F5881802793200EEC943 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		078F567317B36BC8000F4895 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		078F567517B36C89000F4895 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		078F567717B36CA8000F4895 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -799,8 +811,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0782F58A1802793E00EEC943 /* SystemConfiguration.framework in Frameworks */,
 				0782F4E01802693900EEC943 /* CoreLocation.framework in Frameworks */,
 				0782F4E11802693900EEC943 /* Social.framework in Frameworks */,
+				0782F587180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */,
 				0782F4E21802693900EEC943 /* Accounts.framework in Frameworks */,
 				0782F4E31802693900EEC943 /* OpenGLES.framework in Frameworks */,
 				0782F4E41802693900EEC943 /* AVFoundation.framework in Frameworks */,
@@ -822,8 +836,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0782F5891802793200EEC943 /* SystemConfiguration.framework in Frameworks */,
 				58A5E8F517B22C60009AB3EC /* CoreLocation.framework in Frameworks */,
 				58256B0917A97A9C0020C754 /* Social.framework in Frameworks */,
+				0782F586180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */,
 				58256B0717A97A970020C754 /* Accounts.framework in Frameworks */,
 				0746B91417A7AE0700B02894 /* OpenGLES.framework in Frameworks */,
 				5810FF1517A646F6003E3297 /* AVFoundation.framework in Frameworks */,
@@ -862,6 +878,26 @@
 				0746B90B17A7A7B400B02894 /* ZLMusicPlayerCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		0782F57D1802787800EEC943 /* External Libs */ = {
+			isa = PBXGroup;
+			children = (
+				0782F57E180278B600EEC943 /* CrittercismSDK */,
+			);
+			name = "External Libs";
+			sourceTree = "<group>";
+		};
+		0782F57E180278B600EEC943 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0782F57F180278B600EEC943 /* CRFilter.h */,
+				0782F580180278B600EEC943 /* Crittercism.h */,
+				0782F581180278B600EEC943 /* CrittercismDelegate.h */,
+				0782F582180278B600EEC943 /* dsym_upload.sh */,
+				0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */,
+			);
+			path = CrittercismSDK;
 			sourceTree = "<group>";
 		};
 		07CC061417A1065000FDF83A /* CardView */ = {
@@ -1399,6 +1435,7 @@
 		5888A9831794E07600E57A46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0782F5881802793200EEC943 /* SystemConfiguration.framework */,
 				5888A9841794E07600E57A46 /* UIKit.framework */,
 				5888A9861794E07700E57A46 /* Foundation.framework */,
 				5888A9881794E07700E57A46 /* CoreGraphics.framework */,
@@ -1410,6 +1447,7 @@
 		5888A98C1794E07700E57A46 /* Anchor */ = {
 			isa = PBXGroup;
 			children = (
+				0782F57D1802787800EEC943 /* External Libs */,
 				58923B4D17E4C86600B59C25 /* ZLKit */,
 				5848069017AF1A3C00515382 /* ZLMapView */,
 				58256AF917A978520020C754 /* ZLTwitterView */,
@@ -1846,6 +1884,7 @@
 				0782F56E1802693900EEC943 /* Default-568h@2x.png in Resources */,
 				0782F56F1802693900EEC943 /* Default@2x.png in Resources */,
 				0782F5701802693900EEC943 /* Default.png in Resources */,
+				0782F585180278B600EEC943 /* dsym_upload.sh in Resources */,
 				0782F5711802693900EEC943 /* ImageAndTitleCell.xib in Resources */,
 				0782F5721802693900EEC943 /* icon_music_1.png in Resources */,
 				0782F5731802693900EEC943 /* AppIcon@2x.png in Resources */,
@@ -1988,6 +2027,7 @@
 				078F567417B36BC8000F4895 /* Default-568h@2x.png in Resources */,
 				078F567617B36C89000F4895 /* Default@2x.png in Resources */,
 				078F567817B36CA8000F4895 /* Default.png in Resources */,
+				0782F584180278B600EEC943 /* dsym_upload.sh in Resources */,
 				58DF1A0617B3854B00039B4D /* ImageAndTitleCell.xib in Resources */,
 				078F567B17B39119000F4895 /* icon_music_1.png in Resources */,
 				58DF1A1E17B43F1D00039B4D /* AppIcon@2x.png in Resources */,
@@ -2201,6 +2241,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
+					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "ReliefLink beta";
@@ -2226,6 +2267,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
+					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "ReliefLink beta";
@@ -2304,6 +2346,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
+					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = ReliefLink;
@@ -2328,6 +2371,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
+					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "-all_load";
