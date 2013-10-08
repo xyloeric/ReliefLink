@@ -46,6 +46,15 @@
     self.leftViewController = _navController;
 }
 
+- (void)setDetailViewController:(ANDetailViewController *)detailViewController {
+    if (_detailViewController != detailViewController) {
+        [_detailViewController removeFromParentViewController];
+        [_detailViewController release];
+        _detailViewController = [detailViewController retain];
+        [self addChildViewController:_detailViewController];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -60,6 +69,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_detailViewController removeFromParentViewController];
     [_detailViewController release];
     [_navController release];
     [super dealloc];

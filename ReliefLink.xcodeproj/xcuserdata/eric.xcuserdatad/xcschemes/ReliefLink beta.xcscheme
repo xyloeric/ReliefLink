@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0782F4931802693900EEC943"
-               BuildableName = "ReliefLink.app"
+               BuildableName = "ReliefLink beta.app"
                BlueprintName = "ReliefLink beta"
                ReferencedContainer = "container:ReliefLink.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0782F4931802693900EEC943"
-            BuildableName = "ReliefLink.app"
+            BuildableName = "ReliefLink beta.app"
             BlueprintName = "ReliefLink beta"
             ReferencedContainer = "container:ReliefLink.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0782F4931802693900EEC943"
-            BuildableName = "ReliefLink.app"
+            BuildableName = "ReliefLink beta.app"
             BlueprintName = "ReliefLink beta"
             ReferencedContainer = "container:ReliefLink.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0782F4931802693900EEC943"
-            BuildableName = "ReliefLink.app"
+            BuildableName = "ReliefLink beta.app"
             BlueprintName = "ReliefLink beta"
             ReferencedContainer = "container:ReliefLink.xcodeproj">
          </BuildableReference>
