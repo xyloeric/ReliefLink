@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZLMusicPlayerViewController : UIViewController
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 - (id)initWithType:(NSInteger)exerciseType;
 

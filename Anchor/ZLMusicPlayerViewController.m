@@ -10,19 +10,26 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ZLMusicPlayerCell.h"
 #import "F3BarGauge.h"
+#import "ZLWebViewController.h"
 
-#define kAnchoringExercise @{@"title": @"Anchoring Exercise", @"file": @"Anchor_intro", @"fileType": @"m4a", @"description": @"\"Anchoring\" is an effective way to train your body to quickly relax by making an association in your brain between a state of relaxation and touching a specific spot on your hand or wrist."}
+#define kMindfulnessBreathing @{@"title": @"Mindfulness of Breathing",@"url": @"http://medweb.mit.edu/audio/mindfulness_of_breathing.mp3", @"description": @"Mindfulness is an amazing tool for stress management and overall wellness because it can be used at virtually any time and can quickly bring lasting results"}
 
-#define kBreathingExercise @{@"title": @"Breathing Exercise", @"file": @"Breath_Body_and_Sound_Awareness", @"fileType": @"m4a", @"description": @"Deep breathing not only helps to cure anxiety and stress, it also triggers relaxation. Here'show to breathe deeply."}
+#define kBodyScan @{@"title": @"Mindefulness Meditation - Body Scan", @"url": @"http://medweb.mit.edu/audio/body_scan.mp3"}
 
-#define kMindfulnessExercise @{@"title": @"Mindfulness Exercise 1", @"file": @"Mindfulness", @"fileType": @"m4a", @"description": @"Mindfulness is an amazing tool for stress management and overall wellness because it can be used at virtually any time and can quickly bring lasting results"}
+#define kGuidedMeditation @{@"title": @"Relax: Guided Meditation", @"url": @"http://medweb.mit.edu/audio/guided_meditation.mp3"}
+
+#define kEnergizingBreath @{@"title": @"Revive Yourself: Energizing Breath", @"url": @"http://medweb.mit.edu/audio/energize.mp3"}
+
+#define kRelaxationVisualization @{@"title": @"Guided Visualization for Relaxation", @"url": @"http://medweb.mit.edu/audio/guided_visualization.mp3"}
+
+#define kProgressiveRelexation @{@"title": @"Progressive Relaxation: Release Muscle Tension", @"url": @"http://medweb.mit.edu/audio/progressive_relaxation.mp3"}
 
 @interface ZLMusicPlayerViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioPlayerDelegate>
 {
     double _lowPassReslts;
 }
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
+@property (nonatomic, retain) AVPlayer *audioPlayer;
 @property (nonatomic, retain) NSArray *localAssets;
 @property (nonatomic, retain) NSDictionary *selectedAsset;
 @property (retain, nonatomic) IBOutlet F3BarGauge *chanelOneMeter;
@@ -41,10 +48,10 @@
     if (self) {
         self.exerciseType = exerciseType;
         if (exerciseType == 0) {
-            self.localAssets = @[kAnchoringExercise, kBreathingExercise];
+            self.localAssets = @[kGuidedMeditation, kEnergizingBreath, kRelaxationVisualization, kProgressiveRelexation, kBodyScan, kMindfulnessBreathing];
         }
         else {
-            self.localAssets = @[kMindfulnessExercise];
+            self.localAssets = @[kBodyScan, kMindfulnessBreathing];
         }
     }
     return self;
@@ -62,7 +69,7 @@
 {
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"ZLMusicPlayerCell" bundle:nil] forCellReuseIdentifier:@"ZLMusicPlayerCell"];
-    
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     if (_exerciseType == 1) {
         _backgroundView.backgroundColor = [UIColor colorWithRed:0.114 green:0.675 blue:0.929 alpha:1.000];
     }
@@ -101,13 +108,15 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[button(==30)]-5-|" options:0 metrics:nil views:views]];
     
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[button(==50)]" options:0 metrics:nil views:views]];
-
+        _topConstraint.constant = 64.0;
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[button(==30)]" options:0 metrics:nil views:views]];
     }
     else {
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[button(==30)]" options:0 metrics:nil views:views]];
-
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,6 +135,7 @@
     [_chanelOneMeter release];
     [_chanelTwoMeter release];
     [_backgroundView release];
+    [_topConstraint release];
     [super dealloc];
 }
 
@@ -137,38 +147,51 @@
 #pragma mark - Actions
 - (void)closeButtonClicked:(id)sender
 {
-    [_audioPlayer stop];
+    [_audioPlayer pause];
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_localAssets count];
+    return [_localAssets count] + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZLMusicPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZLMusicPlayerCell"];
-    
-    NSDictionary *item = [_localAssets objectAtIndex:indexPath.row];
-    
-    cell.titleLabel.text = item[@"title"];
-    cell.detailLabel.text = item[@"description"];
-    
-    if (_selectedAsset == item && _audioPlayer.isPlaying) {
-        cell.titleImageView.image = [UIImage imageNamed:@"icon_pause"];
+    if (indexPath.row < [_localAssets count]) {
+        
+        ZLMusicPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZLMusicPlayerCell"];
+        
+        NSDictionary *item = [_localAssets objectAtIndex:indexPath.row];
+        
+        cell.titleLabel.text = item[@"title"];
+        cell.detailLabel.text = item[@"description"];
+        
+        if (_selectedAsset == item && _audioPlayer.rate == 1.0) {
+            cell.titleImageView.image = [UIImage imageNamed:@"icon_pause"];
+        }
+        else {
+            cell.titleImageView.image = [UIImage imageNamed:@"icon_play"];
+        }
+        
+        return cell;
     }
     else {
-        cell.titleImageView.image = [UIImage imageNamed:@"icon_play"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        
+        cell.textLabel.font = [UIFont fontWithName:@"AvenirNextCondensed-Medium" size:13];
+        cell.textLabel.text = @"Audio resources belongs to and are made available by MIT Community Wellness Downloads";
+        cell.textLabel.numberOfLines = 0;
+        cell.tintColor = [UIColor whiteColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
     }
-    
-    return cell;
 }
 
 #pragma mark - UITableViewDelegate
@@ -176,51 +199,82 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSDictionary *item = [_localAssets objectAtIndex:indexPath.row];
-    
-    if (_selectedAsset == item) {
-        if (_audioPlayer.isPlaying) {
-            [_audioPlayer pause];
+    if (indexPath.row < [_localAssets count]) {
+        NSDictionary *item = [_localAssets objectAtIndex:indexPath.row];
+        
+        if (_selectedAsset == item) {
+            if (_audioPlayer.rate == 1.0) {
+                [_audioPlayer pause];
+            }
+            else {
+                [_audioPlayer play];
+            }
         }
         else {
+            self.selectedAsset = item;
+            
+            NSURL *assetURL = nil;
+            
+            if (_selectedAsset[@"url"]) {
+                assetURL = [NSURL URLWithString:_selectedAsset[@"url"]];
+            }
+            else {
+                assetURL = [[NSBundle mainBundle] URLForResource:item[@"file"] withExtension:item[@"fileType"]];
+                
+            }
+            
+            self.audioPlayer = [AVPlayer playerWithURL:assetURL];
             [_audioPlayer play];
         }
+        
+        [tableView reloadData];
     }
     else {
-        self.selectedAsset = item;
-        
-        NSURL *assetURL = [[NSBundle mainBundle] URLForResource:item[@"file"] withExtension:item[@"fileType"]];
-        NSError *error = nil;
-        self.audioPlayer = [[[AVAudioPlayer alloc] initWithContentsOfURL:assetURL error:&error] autorelease];
-        _audioPlayer.delegate = self;
-        [_audioPlayer setMeteringEnabled:YES];
-        [_audioPlayer play];
-        
-        self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:1/60.0 target:self selector:@selector(updateMeters:) userInfo:nil repeats:YES];
-        
+        ZLWebViewController *vc = [[ZLWebViewController alloc] init];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        vc.titleBarColor = self.view.backgroundColor;
+        vc.title = @"";
+        [self presentViewController:vc animated:YES completion:^{
+            [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://medweb.mit.edu/wellness/resources/downloads.html"]]];
+        }];
+        [vc release];
     }
-    
-    [tableView reloadData];
+
 }
 
-- (void)updateMeters:(NSTimer *)timer
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_audioPlayer updateMeters];
-
-    const double ALPHA = 1.05;
-    double averagePowerForChannel = pow(10, (0.05 * [_audioPlayer averagePowerForChannel:0]));
-	_lowPassReslts = ALPHA * averagePowerForChannel + (1.0 - ALPHA) * _lowPassReslts;
-    
-    float rand1 = (float)rand() / RAND_MAX;
-    float rand2 = (float)rand() / RAND_MAX;
-    
-    _chanelOneMeter.value = _lowPassReslts * (1+rand1 * 0.2);
-    _chanelTwoMeter.value = _lowPassReslts * (1+rand2 * 0.2);
-
+    if (indexPath.row % 2 != 0) {
+        cell.backgroundColor = [UIColor colorWithRed:0.114 green:0.675 blue:0.929 alpha:0.3];
+    }
+    else {
+//        cell.backgroundColor = [UIColor colorWithRed:0.114 green:0.675 blue:0.929 alpha:0.6];
+    }
 }
 
+//- (void)updateMeters:(NSTimer *)timer
+//{
+//    [_audioPlayer updateMeters];
+//    
+//    const double ALPHA = 1.05;
+//    double averagePowerForChannel = pow(10, (0.05 * [_audioPlayer averagePowerForChannel:0]));
+//	_lowPassReslts = ALPHA * averagePowerForChannel + (1.0 - ALPHA) * _lowPassReslts;
+//    
+//    float rand1 = (float)rand() / RAND_MAX;
+//    float rand2 = (float)rand() / RAND_MAX;
+//    
+//    _chanelOneMeter.value = _lowPassReslts * (1+rand1 * 0.2);
+//    _chanelTwoMeter.value = _lowPassReslts * (1+rand2 * 0.2);
+//    
+//}
 
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+
+//- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+//{
+//    [_tableView reloadData];
+//}
+
+- (void)itemDidFinishPlaying:(NSNotification *)notification
 {
     [_tableView reloadData];
 }

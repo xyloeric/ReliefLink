@@ -74,14 +74,6 @@
         if (_launchOption) {
             NSInteger launchOption = [_launchOption intValue];
             switch (launchOption) {
-                case 1:
-                {
-                    ZLMusicPlayerViewController *vc = [[ZLMusicPlayerViewController alloc] initWithType:1];
-                    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                    [self presentViewController:vc animated:YES completion:^{}];
-                    [vc release];
-                }
-                    break;
                 case 2:
                 {
                     ZLMusicPlayerViewController *vc = [[ZLMusicPlayerViewController alloc] initWithType:0];
@@ -178,7 +170,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 7;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,34 +184,30 @@
     
     switch (indexPath.row) {
         case 0:
-            cell.titleLabel.text = @"Mindfulness Exercises";
-            cell.iconImageView.image = [UIImage imageNamed:@"icon_resource_kit"];
-            break;
-        case 1:
             cell.titleLabel.text = @"Relaxation Exercises";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_resource_kit"];
             break;
-        case 2:
+        case 1:
             cell.titleLabel.text = @"Twitter";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_twitter_2"];
             break;
-        case 3:
+        case 2:
             cell.titleLabel.text = @"Relaxing Music";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_music_1"];
             break;
-        case 4:
+        case 3:
             cell.titleLabel.text = @"Help Near You";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 5:
+        case 4:
             cell.titleLabel.text = @"Therapist Locator";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 6:
+        case 5:
             cell.titleLabel.text = @"Support Group Finder";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 7:
+        case 6:
             cell.titleLabel.text = @"Treatment Services Locator";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
@@ -237,19 +225,12 @@
     switch (indexPath.row) {
         case 0:
         {
-            ZLMusicPlayerViewController *vc = [[ZLMusicPlayerViewController alloc] initWithType:1];
-            [self presentViewController:vc animated:YES completion:^{}];
-            [vc release];
-        }
-            break;
-        case 1:
-        {
             ZLMusicPlayerViewController *vc = [[ZLMusicPlayerViewController alloc] initWithType:0];
             [self presentViewController:vc animated:YES completion:^{}];
             [vc release];
         }
             break;
-        case 2:
+        case 1:
         {
             ZLTwitterViewController *vc = [[ZLTwitterViewController alloc] init];
             [self presentViewController:vc animated:YES completion:^{}];
@@ -257,7 +238,7 @@
         }
             
             break;
-        case 3:
+        case 2:
         {            
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;
@@ -268,14 +249,14 @@
             [vc release];
         }
             break;
-        case 4:
+        case 3:
         {
             ZLLocalMapViewController *vc = [[ZLLocalMapViewController alloc] init];
             [self presentViewController:vc animated:YES completion:^{}];
             [vc release];
         }
             break;
-        case 5:
+        case 4:
         {
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;
@@ -286,7 +267,7 @@
             [vc release];
         }
             break;
-        case 6:
+        case 5:
         {
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;
@@ -297,7 +278,7 @@
             [vc release];
         }
             break;
-        case 7:
+        case 6:
         {
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;

@@ -11,8 +11,6 @@
 		0746B8FC17A2698500B02894 /* icon_x_white1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746B8F817A2698500B02894 /* icon_x_white1@2x.png */; };
 		0746B8FD17A2698500B02894 /* icon_x_white1_hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746B8F917A2698500B02894 /* icon_x_white1_hi.png */; };
 		0746B8FE17A2698500B02894 /* icon_x_white1_hi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746B8FA17A2698500B02894 /* icon_x_white1_hi@2x.png */; };
-		0746B90517A7A65100B02894 /* Anchoring_Exercise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90317A7A65100B02894 /* Anchoring_Exercise.m4a */; };
-		0746B90617A7A65100B02894 /* Breathing_Exercise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90417A7A65100B02894 /* Breathing_Exercise.m4a */; };
 		0746B90A17A7A7A400B02894 /* ZLMusicPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746B90917A7A7A400B02894 /* ZLMusicPlayerCell.m */; };
 		0746B90C17A7A7B400B02894 /* ZLMusicPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90B17A7A7B400B02894 /* ZLMusicPlayerCell.xib */; };
 		0746B91417A7AE0700B02894 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0746B91317A7AE0700B02894 /* OpenGLES.framework */; };
@@ -199,8 +197,6 @@
 		0782F54C1802693900EEC943 /* icon_cell_add60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5810FF0317A61EF0003E3297 /* icon_cell_add60.png */; };
 		0782F54D1802693900EEC943 /* ANAddItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5810FF0A17A61F4C003E3297 /* ANAddItemCell.xib */; };
 		0782F54E1802693900EEC943 /* ZLMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5810FF1117A639BD003E3297 /* ZLMusicPlayerViewController.xib */; };
-		0782F54F1802693900EEC943 /* Anchoring_Exercise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90317A7A65100B02894 /* Anchoring_Exercise.m4a */; };
-		0782F5501802693900EEC943 /* Breathing_Exercise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90417A7A65100B02894 /* Breathing_Exercise.m4a */; };
 		0782F5511802693900EEC943 /* ZLMusicPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746B90B17A7A7B400B02894 /* ZLMusicPlayerCell.xib */; };
 		0782F5521802693900EEC943 /* ZLTwitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58256AFD17A978830020C754 /* ZLTwitterViewController.xib */; };
 		0782F5531802693900EEC943 /* ZLTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58256B0317A978A60020C754 /* ZLTweetCell.xib */; };
@@ -237,7 +233,6 @@
 		0782F5721802693900EEC943 /* icon_music_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F567A17B39119000F4895 /* icon_music_1.png */; };
 		0782F5731802693900EEC943 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */; };
 		0782F5741802693900EEC943 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A2017B43F2000039B4D /* AppIcon.png */; };
-		0782F5751802693900EEC943 /* Mindfulness.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 58C3852E17B4B99300DB75D6 /* Mindfulness.m4a */; };
 		0782F5761802693900EEC943 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568417B4C02D000F4895 /* icon_play.png */; };
 		0782F5771802693900EEC943 /* icon_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568517B4C02D000F4895 /* icon_pause.png */; };
 		0782F584180278B600EEC943 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0782F582180278B600EEC943 /* dsym_upload.sh */; };
@@ -453,7 +448,6 @@
 		58A5E92317B2470C009AB3EC /* icon_very_good.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A5E91E17B2470C009AB3EC /* icon_very_good.png */; };
 		58A5E92417B2470C009AB3EC /* icon_very_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A5E91F17B2470C009AB3EC /* icon_very_low.png */; };
 		58A5E92D17B2EDA7009AB3EC /* SuicidalThought.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A5E92C17B2EDA7009AB3EC /* SuicidalThought.m */; };
-		58C3852F17B4B99300DB75D6 /* Mindfulness.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 58C3852E17B4B99300DB75D6 /* Mindfulness.m4a */; };
 		58D8BB4D17A1C2F20034D831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8BB4C17A1C2F20034D831 /* MessageUI.framework */; };
 		58DF1A0417B3853C00039B4D /* ImageAndTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DF1A0317B3853C00039B4D /* ImageAndTitleCell.m */; };
 		58DF1A0617B3854B00039B4D /* ImageAndTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A0517B3854B00039B4D /* ImageAndTitleCell.xib */; };
@@ -490,8 +484,6 @@
 		0746B8F817A2698500B02894 /* icon_x_white1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_x_white1@2x.png"; sourceTree = "<group>"; };
 		0746B8F917A2698500B02894 /* icon_x_white1_hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_x_white1_hi.png; sourceTree = "<group>"; };
 		0746B8FA17A2698500B02894 /* icon_x_white1_hi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_x_white1_hi@2x.png"; sourceTree = "<group>"; };
-		0746B90317A7A65100B02894 /* Anchoring_Exercise.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Anchoring_Exercise.m4a; sourceTree = "<group>"; };
-		0746B90417A7A65100B02894 /* Breathing_Exercise.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Breathing_Exercise.m4a; sourceTree = "<group>"; };
 		0746B90817A7A7A400B02894 /* ZLMusicPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLMusicPlayerCell.h; sourceTree = "<group>"; };
 		0746B90917A7A7A400B02894 /* ZLMusicPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLMusicPlayerCell.m; sourceTree = "<group>"; };
 		0746B90B17A7A7B400B02894 /* ZLMusicPlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLMusicPlayerCell.xib; sourceTree = "<group>"; };
@@ -797,7 +789,6 @@
 		58A5E91F17B2470C009AB3EC /* icon_very_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_very_low.png; sourceTree = "<group>"; };
 		58A5E92B17B2EDA7009AB3EC /* SuicidalThought.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuicidalThought.h; sourceTree = "<group>"; };
 		58A5E92C17B2EDA7009AB3EC /* SuicidalThought.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuicidalThought.m; sourceTree = "<group>"; };
-		58C3852E17B4B99300DB75D6 /* Mindfulness.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mindfulness.m4a; sourceTree = "<group>"; };
 		58D8BB4C17A1C2F20034D831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		58DF1A0217B3853C00039B4D /* ImageAndTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTitleCell.h; sourceTree = "<group>"; };
 		58DF1A0317B3853C00039B4D /* ImageAndTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTitleCell.m; sourceTree = "<group>"; };
@@ -863,9 +854,6 @@
 		0746B90117A7A63500B02894 /* Audio Files */ = {
 			isa = PBXGroup;
 			children = (
-				58C3852E17B4B99300DB75D6 /* Mindfulness.m4a */,
-				0746B90317A7A65100B02894 /* Anchoring_Exercise.m4a */,
-				0746B90417A7A65100B02894 /* Breathing_Exercise.m4a */,
 			);
 			name = "Audio Files";
 			sourceTree = "<group>";
@@ -1850,8 +1838,6 @@
 				0782F54C1802693900EEC943 /* icon_cell_add60.png in Resources */,
 				0782F54D1802693900EEC943 /* ANAddItemCell.xib in Resources */,
 				0782F54E1802693900EEC943 /* ZLMusicPlayerViewController.xib in Resources */,
-				0782F54F1802693900EEC943 /* Anchoring_Exercise.m4a in Resources */,
-				0782F5501802693900EEC943 /* Breathing_Exercise.m4a in Resources */,
 				0782F5511802693900EEC943 /* ZLMusicPlayerCell.xib in Resources */,
 				0782F5521802693900EEC943 /* ZLTwitterViewController.xib in Resources */,
 				0782F5531802693900EEC943 /* ZLTweetCell.xib in Resources */,
@@ -1889,7 +1875,6 @@
 				0782F5721802693900EEC943 /* icon_music_1.png in Resources */,
 				0782F5731802693900EEC943 /* AppIcon@2x.png in Resources */,
 				0782F5741802693900EEC943 /* AppIcon.png in Resources */,
-				0782F5751802693900EEC943 /* Mindfulness.m4a in Resources */,
 				0782F5761802693900EEC943 /* icon_play.png in Resources */,
 				0782F5771802693900EEC943 /* icon_pause.png in Resources */,
 			);
@@ -1993,8 +1978,6 @@
 				5810FF0517A61EF1003E3297 /* icon_cell_add60.png in Resources */,
 				5810FF0B17A61F4C003E3297 /* ANAddItemCell.xib in Resources */,
 				5810FF1317A639BD003E3297 /* ZLMusicPlayerViewController.xib in Resources */,
-				0746B90517A7A65100B02894 /* Anchoring_Exercise.m4a in Resources */,
-				0746B90617A7A65100B02894 /* Breathing_Exercise.m4a in Resources */,
 				0746B90C17A7A7B400B02894 /* ZLMusicPlayerCell.xib in Resources */,
 				58256AFF17A978830020C754 /* ZLTwitterViewController.xib in Resources */,
 				58256B0517A978A60020C754 /* ZLTweetCell.xib in Resources */,
@@ -2032,7 +2015,6 @@
 				078F567B17B39119000F4895 /* icon_music_1.png in Resources */,
 				58DF1A1E17B43F1D00039B4D /* AppIcon@2x.png in Resources */,
 				58DF1A2117B43F2000039B4D /* AppIcon.png in Resources */,
-				58C3852F17B4B99300DB75D6 /* Mindfulness.m4a in Resources */,
 				078F568617B4C02D000F4895 /* icon_play.png in Resources */,
 				078F568717B4C02D000F4895 /* icon_pause.png in Resources */,
 			);
