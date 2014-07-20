@@ -10,10 +10,7 @@
 
 // Operating System Support
 //
-// The Crittercism iOS library supports iOS v4.3+
-//
-// The OPTMZ network instrumentation component will only be enabled on iOS v5.0
-// and higher.
+// The Crittercism iOS library supports iOS v5.0+
 
 // Additional Requirements:
 //
@@ -28,6 +25,8 @@
 // Example:
 //
 // [Crittercism enableWithAppID:@"YOURAPPIDGOESHERE"];
+
+@class CLLocation;
 
 @interface Crittercism : NSObject
 
@@ -98,6 +97,10 @@
 
 + (void)setAsyncBreadcrumbMode:(BOOL)writeAsync;
 
+// Inform Crittercism of the device's most recent location for use with
+// performance monitoring.
++ (void)updateLocation:(CLLocation *)location;
+
 // Handled exceptions are a way of reporting exceptions your app intentionally
 // caught. If the passed in NSException object was @thrown, the stack trace
 // of the thread that threw the exception will be displayed on the Crittercism
@@ -161,12 +164,12 @@
 
 // Crittercism delegate property
 
-- (id <CrittercismDelegate>)delegate;
++ (id <CrittercismDelegate>)delegate;
 
-- (void)setDelegate:(id <CrittercismDelegate>)delegate;
++ (void)setDelegate:(id <CrittercismDelegate>)delegate;
 
 // Did the application crash on the previous load?
 
-- (BOOL)didCrashOnLastLoad;
++ (BOOL)didCrashOnLastLoad;
 
 @end

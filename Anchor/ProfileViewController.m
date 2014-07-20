@@ -100,7 +100,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -110,13 +110,13 @@
             return 1;
             break;
         case 1:
-            return 5;
+            return 1;
             break;
         case 2:
             return 3;
             break;
         case 3:
-            return 5;
+            return 4;
             break;
         case 4:
             return 4;
@@ -207,25 +207,9 @@
             cell.customSeparatorViewTop.hidden = YES;
             switch (indexPath.row) {
                 case 0:
-                    cell.editingKey = @"firstName";
-                    cell.titleLabel.text = @"First Name";
-                    cell.customSeparatorViewTop.hidden = NO;
-                    break;
-                case 1:
-                    cell.editingKey = @"middleName";
-                    cell.titleLabel.text = @"Middle Name";
-                    break;
-                case 2:
-                    cell.editingKey = @"lastName";
-                    cell.titleLabel.text = @"Last Name";
-                    break;
-                case 3:
                     cell.editingKey = @"nickname";
                     cell.titleLabel.text = @"Nickname";
-                    break;
-                case 4:
-                    cell.editingKey = @"dateOfBirth";
-                    cell.titleLabel.text = @"Date of Birth";
+                    cell.customSeparatorViewTop.hidden = NO;
                     break;
                 default:
                     break;

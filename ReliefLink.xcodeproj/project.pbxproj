@@ -235,10 +235,6 @@
 		0782F5741802693900EEC943 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A2017B43F2000039B4D /* AppIcon.png */; };
 		0782F5761802693900EEC943 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568417B4C02D000F4895 /* icon_play.png */; };
 		0782F5771802693900EEC943 /* icon_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568517B4C02D000F4895 /* icon_pause.png */; };
-		0782F584180278B600EEC943 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0782F582180278B600EEC943 /* dsym_upload.sh */; };
-		0782F585180278B600EEC943 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0782F582180278B600EEC943 /* dsym_upload.sh */; };
-		0782F586180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */; };
-		0782F587180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */; };
 		0782F5891802793200EEC943 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F5881802793200EEC943 /* SystemConfiguration.framework */; };
 		0782F58A1802793E00EEC943 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0782F5881802793200EEC943 /* SystemConfiguration.framework */; };
 		078F567417B36BC8000F4895 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F567317B36BC8000F4895 /* Default-568h@2x.png */; };
@@ -453,6 +449,8 @@
 		58DF1A0617B3854B00039B4D /* ImageAndTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A0517B3854B00039B4D /* ImageAndTitleCell.xib */; };
 		58DF1A1E17B43F1D00039B4D /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */; };
 		58DF1A2117B43F2000039B4D /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A2017B43F2000039B4D /* AppIcon.png */; };
+		99C41969197C674600E29AF5 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 99C41968197C674600E29AF5 /* dsym_upload.sh */; };
+		99C4196B197C675000E29AF5 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -495,8 +493,6 @@
 		0782F57F180278B600EEC943 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
 		0782F580180278B600EEC943 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
 		0782F581180278B600EEC943 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		0782F582180278B600EEC943 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_7.a; sourceTree = "<group>"; };
 		0782F5881802793200EEC943 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		078F567317B36BC8000F4895 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		078F567517B36C89000F4895 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -795,6 +791,8 @@
 		58DF1A0517B3854B00039B4D /* ImageAndTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAndTitleCell.xib; sourceTree = "<group>"; };
 		58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
 		58DF1A2017B43F2000039B4D /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		99C41968197C674600E29AF5 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -805,7 +803,6 @@
 				0782F58A1802793E00EEC943 /* SystemConfiguration.framework in Frameworks */,
 				0782F4E01802693900EEC943 /* CoreLocation.framework in Frameworks */,
 				0782F4E11802693900EEC943 /* Social.framework in Frameworks */,
-				0782F587180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */,
 				0782F4E21802693900EEC943 /* Accounts.framework in Frameworks */,
 				0782F4E31802693900EEC943 /* OpenGLES.framework in Frameworks */,
 				0782F4E41802693900EEC943 /* AVFoundation.framework in Frameworks */,
@@ -830,7 +827,6 @@
 				0782F5891802793200EEC943 /* SystemConfiguration.framework in Frameworks */,
 				58A5E8F517B22C60009AB3EC /* CoreLocation.framework in Frameworks */,
 				58256B0917A97A9C0020C754 /* Social.framework in Frameworks */,
-				0782F586180278B600EEC943 /* libCrittercism_v4_0_7.a in Frameworks */,
 				58256B0717A97A970020C754 /* Accounts.framework in Frameworks */,
 				0746B91417A7AE0700B02894 /* OpenGLES.framework in Frameworks */,
 				5810FF1517A646F6003E3297 /* AVFoundation.framework in Frameworks */,
@@ -840,6 +836,7 @@
 				58D8BB4D17A1C2F20034D831 /* MessageUI.framework in Frameworks */,
 				58A091DC17989DD2005F049A /* MapKit.framework in Frameworks */,
 				5888AA1117973C7E00E57A46 /* QuartzCore.framework in Frameworks */,
+				99C4196B197C675000E29AF5 /* libCrittercism_v4_3_4.a in Frameworks */,
 				5888A9851794E07700E57A46 /* UIKit.framework in Frameworks */,
 				5888A9871794E07700E57A46 /* Foundation.framework in Frameworks */,
 				5888A9891794E07700E57A46 /* CoreGraphics.framework in Frameworks */,
@@ -882,8 +879,8 @@
 				0782F57F180278B600EEC943 /* CRFilter.h */,
 				0782F580180278B600EEC943 /* Crittercism.h */,
 				0782F581180278B600EEC943 /* CrittercismDelegate.h */,
-				0782F582180278B600EEC943 /* dsym_upload.sh */,
-				0782F583180278B600EEC943 /* libCrittercism_v4_0_7.a */,
+				99C41968197C674600E29AF5 /* dsym_upload.sh */,
+				99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */,
 			);
 			path = CrittercismSDK;
 			sourceTree = "<group>";
@@ -1870,7 +1867,6 @@
 				0782F56E1802693900EEC943 /* Default-568h@2x.png in Resources */,
 				0782F56F1802693900EEC943 /* Default@2x.png in Resources */,
 				0782F5701802693900EEC943 /* Default.png in Resources */,
-				0782F585180278B600EEC943 /* dsym_upload.sh in Resources */,
 				0782F5711802693900EEC943 /* ImageAndTitleCell.xib in Resources */,
 				0782F5721802693900EEC943 /* icon_music_1.png in Resources */,
 				0782F5731802693900EEC943 /* AppIcon@2x.png in Resources */,
@@ -1892,6 +1888,7 @@
 				5888A9C71795DA4B00E57A46 /* ANNavigationCell.xib in Resources */,
 				5888A9EA1795EAFA00E57A46 /* button_universal_38x38a.png in Resources */,
 				5888A9FE1797126100E57A46 /* MoodEntryViewController.xib in Resources */,
+				99C41969197C674600E29AF5 /* dsym_upload.sh in Resources */,
 				58A091D817989100005F049A /* SingleGridCell.xib in Resources */,
 				58A091DA1798910C005F049A /* DualGridCell.xib in Resources */,
 				58625C95179C6C0B00F22B82 /* icon_settings.png in Resources */,
@@ -2010,7 +2007,6 @@
 				078F567417B36BC8000F4895 /* Default-568h@2x.png in Resources */,
 				078F567617B36C89000F4895 /* Default@2x.png in Resources */,
 				078F567817B36CA8000F4895 /* Default.png in Resources */,
-				0782F584180278B600EEC943 /* dsym_upload.sh in Resources */,
 				58DF1A0617B3854B00039B4D /* ImageAndTitleCell.xib in Resources */,
 				078F567B17B39119000F4895 /* icon_music_1.png in Resources */,
 				58DF1A1E17B43F1D00039B4D /* AppIcon@2x.png in Resources */,
@@ -2323,6 +2319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "Anchor/ReliefLink-Info.plist";
@@ -2331,10 +2328,11 @@
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
 					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
+					"$(PROJECT_DIR)/Anchor/CrittercismSDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = ReliefLink;
-				PROVISIONING_PROFILE = "E66E80EB-41E3-4094-941D-4737E188AE1A";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2348,6 +2346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
@@ -2357,11 +2356,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
 					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
+					"$(PROJECT_DIR)/Anchor/CrittercismSDK",
 				);
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = ReliefLink;
-				PROVISIONING_PROFILE = "90DC27D0-C3A8-4A32-BE4F-318C0347C504";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
