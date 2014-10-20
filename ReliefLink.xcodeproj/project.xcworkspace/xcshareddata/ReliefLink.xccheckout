@@ -10,29 +10,29 @@
 	<string>ReliefLink</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>66C066F7-46D2-4432-921E-9FF9F51637F5</key>
+		<key>E254C44A1F83005363EB4AA0B2F09F929024E7AE</key>
 		<string>ssh://github.com/xyloeric/ReliefLink.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ReliefLink.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>66C066F7-46D2-4432-921E-9FF9F51637F5</key>
+		<key>E254C44A1F83005363EB4AA0B2F09F929024E7AE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/xyloeric/ReliefLink.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>66C066F7-46D2-4432-921E-9FF9F51637F5</string>
+	<string>E254C44A1F83005363EB4AA0B2F09F929024E7AE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>66C066F7-46D2-4432-921E-9FF9F51637F5</string>
+			<string>E254C44A1F83005363EB4AA0B2F09F929024E7AE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ReliefLink</string>
 		</dict>
