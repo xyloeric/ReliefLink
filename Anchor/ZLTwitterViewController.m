@@ -368,9 +368,11 @@
     id result = [NSJSONSerialization JSONObjectWithData:dataContainer options:NSJSONReadingAllowFragments error:&error];
     
     if ([result isKindOfClass:[NSDictionary class]] && [result[@"errors"] count] > 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Seems like we encountered a authentication issue with your twitter account, please verify it in the system setting of your phone" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
+        UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
+        if (window.rootViewController) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Twitter Account" message:@"Seems like we encountered a authentication issue with your twitter account, please verify it in the system setting of your phone" preferredStyle:UIAlertControllerStyleAlert];
+            [window.rootViewController presentViewController:alert animated:YES completion:nil];
+        }
     }
     else {
         dispatch_async(dispatch_get_main_queue(), ^{

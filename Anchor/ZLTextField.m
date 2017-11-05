@@ -91,7 +91,7 @@
 - (void)setTextFieldColor:(DRBaseTextFieldColor)textFieldColor {
     _textFieldColor = textFieldColor;
     if (_mode == kDRBaseTextFieldCGMode) {
-	self.backgroundColor = [self colorForTextFieldColor:_textFieldColor];
+        self.backgroundColor = [self colorForTextFieldColor:_textFieldColor];
     }
     [self setNeedsDisplay];
 }

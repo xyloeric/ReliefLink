@@ -13,7 +13,7 @@
 #import "ANDataStoreCoordinator.h"
 #import "PersonForHelp.h"
 
-@interface EmergencyViewController () <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
+@interface EmergencyViewController () <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIView *titleBar;
 @property (nonatomic, retain) NSArray *contacts;
@@ -134,10 +134,12 @@
                 [[ANDataStoreCoordinator shared] callPhoneNumber:currentUser.psychologistPhone];
             }
             else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"You haven't setup your conuselor's contact yet, please go to profile and set it up" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Take Me There", nil];
-                alert.tag = 10;
-                [alert show];
-                [alert release];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"You haven't setup your conuselor's contact yet, please go to profile and set it up" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Take Me There" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"Profile", @"launchOption": @"3"}];
+                }]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }
             break;
@@ -148,10 +150,12 @@
                 [[ANDataStoreCoordinator shared] callPhoneNumber:currentUser.psychiatristPhone];
             }
             else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"You haven't setup your psychiatrist's contact yet, please go to profile and set it up" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Take Me There", nil];
-                alert.tag = 10;
-                [alert show];
-                [alert release];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"You haven't setup your psychiatrist's contact yet, please go to profile and set it up" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Take Me There" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"Profile", @"launchOption": @"3"}];
+                }]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }
             break;
@@ -176,10 +180,11 @@
             }
             
             if ([temp count] == 0) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"You don't have any contacts with phone number setup yet, please add your friends and family's contacts in the safety plan section" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Take Me There", nil];
-                alert.tag = 11;
-                [alert show];
-                [alert release];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"You don't have any contacts with phone number setup yet, please add your friends and family's contacts in the safety plan section" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Take Me There" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"SafetyPlan", @"launchOption": @"3"}];                }]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
             else {
                 if([MFMessageComposeViewController canSendText])
@@ -203,10 +208,11 @@
             }
             
             if ([_contacts count] == 0) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"You don't have any contacts with email address setup yet, please add your friends and family's contacts in the safety plan section" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Take Me There", nil];
-                alert.tag = 11;
-                [alert show];
-                [alert release];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"You don't have any contacts with email address setup yet, please add your friends and family's contacts in the safety plan section" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Take Me There" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"SafetyPlan", @"launchOption": @"3"}];                }]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+                [self presentViewController:alert animated:YES completion:nil];
             }
             else {
                 if ([MFMailComposeViewController canSendMail]) {
@@ -233,20 +239,6 @@
     [_titleHeightConstraint release];
     [super dealloc];
 }
-
-#pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != [alertView cancelButtonIndex]) {
-        if (alertView.tag == 10) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"Profile", @"launchOption": @"3"}];
-        }
-        else if (alertView.tag == 11) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RequestSwitchView" object:@{@"class": @"SafetyPlan", @"launchOption": @"3"}];
-        }
-    }
-}
-
 
 #pragma mark - MFMessageComposeViewControllerDelegate
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result

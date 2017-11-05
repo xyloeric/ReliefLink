@@ -96,10 +96,9 @@
 
 - (void)handleReceivedLocalNotification:(UILocalNotification *)notification
 {
-    if (notification) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notification.alertBody message:notification.userInfo[@"note"] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Show", nil];
-        [alert show];
-        [alert release];
+    if (notification) {        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:notification.alertBody message:notification.userInfo[@"note"] preferredStyle:UIAlertControllerStyleAlert];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
         
         [[ANDataStoreCoordinator shared] refreshScheduledStatusOfReminders];
     }

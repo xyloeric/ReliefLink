@@ -67,8 +67,6 @@ static NSString *CellIdentifier = @"NavigationCell";
     
     [_tableView registerNib:[UINib nibWithNibName:@"ANNavigationCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
     
-    [_profileImageView.layer setCornerRadius:_profileImageView.frame.size.width/2];
-    [_profileImageView.layer setMasksToBounds:YES];
     [self refreshProfilePicture:nil];
     
     [_settingsButton setBackgroundImage:[UIImage imageNamed:@"icon_settings"] forState:UIControlStateNormal];
@@ -102,6 +100,13 @@ static NSString *CellIdentifier = @"NavigationCell";
     if ([self.nameLabel.text length] == 0) {
         self.nameLabel.text = @"Your Name";
     }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [_profileImageView.layer setCornerRadius:_profileImageView.frame.size.width/2];
+    [_profileImageView.layer setMasksToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -174,9 +179,9 @@ static NSString *CellIdentifier = @"NavigationCell";
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 	}
-	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have camera" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-		[alert show];
+    else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Your device doesn't have camera" preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alert animated:YES completion:nil];
 		return;
 	}
     

@@ -107,21 +107,17 @@
 
 - (IBAction)editViewDeleteButtonClicked:(id)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to delete this item? This operation cannot be undone" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
-    [alert show];
-    [alert release];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != [alertView cancelButtonIndex]) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Are you sure you want to delete this item? This operation cannot be undone" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [_delegate safetyPlanningStepViewControllerRequestHideHoveringView:self];
         
         [[[ANDataStoreCoordinator shared] managedObjectContext] deleteObject:_editingLocation];
         self.editingLocation = nil;
         
         [[ANDataStoreCoordinator shared] saveDataStore];
-    }
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

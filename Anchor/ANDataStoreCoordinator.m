@@ -15,7 +15,9 @@
 
 #define kAlertPhoneCall 100
 
-@interface ANDataStoreCoordinator () <UIAlertViewDelegate>
+static NSString *const _TwitterAlertShown = @"TwitterAlertShown";
+
+@interface ANDataStoreCoordinator ()
 @property (nonatomic, retain) User *currentUser;
 @end
 
@@ -75,10 +77,16 @@
 
 - (void)twitterAlert
 {
-    if ([[[UIApplication sharedApplication] windows] count] > 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter Account" message:@"Please setup a twitter account from the settings of your iPhone to enjoy a more connected experience of this app" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:_TwitterAlertShown]) {
+        return;
+    }
+    
+    UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
+    if (window.rootViewController) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Twitter Account" message:@"Please setup a twitter account from the settings of your iPhone to enjoy a more connected experience of this app" preferredStyle:UIAlertControllerStyleAlert];
+        [window.rootViewController presentViewController:alert animated:YES completion:^{
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:_TwitterAlertShown];
+        }];
     }
 }
 
@@ -305,20 +313,15 @@
 
 - (void)callPhoneNumber:(NSString *)phoneNumber
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Call This Number?" message:phoneNumber delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Call", nil];
-    alert.tag = kAlertPhoneCall;
-    [alert show];
-    [alert release];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView.tag == kAlertPhoneCall) {
-        if (buttonIndex != alertView.cancelButtonIndex) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", alertView.message]]];
-        }
+    UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
+    if (window.rootViewController) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Call This Number" message:phoneNumber preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Call" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", phoneNumber]]];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+        [window.rootViewController presentViewController:alert animated:YES completion:nil];
     }
-
 }
 
 - (void)createDemoData

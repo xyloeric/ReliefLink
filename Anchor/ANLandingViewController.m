@@ -283,8 +283,8 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 		picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have camera" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-		[alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Your device doesn't have camera" preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alert animated:YES completion:nil];
 		return;
 	}
     
