@@ -53,21 +53,23 @@
     ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     [store requestAccessToAccountsWithType:twitterAccountType options:nil completion:^(BOOL granted, NSError *error) {
-        if (granted) {
-            NSArray *twitterAccounts = [store accountsWithAccountType:twitterAccountType];
-            if ([twitterAccounts count] > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (granted) {
+                NSArray *twitterAccounts = [store accountsWithAccountType:twitterAccountType];
+                if ([twitterAccounts count] > 0) {
                     // Use the first account for simplicity
-                ACAccount *account = [twitterAccounts objectAtIndex:0];
-                
-                [self startStreamWithAccount:account forTimelineOfUser:@"relieflink"];
+                    ACAccount *account = [twitterAccounts objectAtIndex:0];
+                    
+                    [self startStreamWithAccount:account forTimelineOfUser:@"relieflink"];
+                }
+                else {
+                    [self twitterAlert];
+                }
             }
             else {
                 [self twitterAlert];
             }
-        }
-        else {
-            [self twitterAlert];
-        }
+        });
     }];
 }
 

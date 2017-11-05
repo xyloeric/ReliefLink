@@ -451,6 +451,7 @@
 		58DF1A2117B43F2000039B4D /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A2017B43F2000039B4D /* AppIcon.png */; };
 		99C41969197C674600E29AF5 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 99C41968197C674600E29AF5 /* dsym_upload.sh */; };
 		99C4196B197C675000E29AF5 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */; };
+		ECE013F01FAFC5AA009A481E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE013EF1FAFC5AA009A481E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -793,6 +794,7 @@
 		58DF1A2017B43F2000039B4D /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		99C41968197C674600E29AF5 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
 		99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
+		ECE013EF1FAFC5AA009A481E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1382,6 +1384,7 @@
 		5888A9781794E07600E57A46 = {
 			isa = PBXGroup;
 			children = (
+				ECE013EF1FAFC5AA009A481E /* Launch Screen.storyboard */,
 				58923BB317E8C54600B59C25 /* Images.xcassets */,
 				58923BAF17E77DE800B59C25 /* image_120.png */,
 				58DF1A2017B43F2000039B4D /* AppIcon.png */,
@@ -2002,6 +2005,7 @@
 				58A5E92017B2470C009AB3EC /* icon_average.png in Resources */,
 				58A5E92117B2470C009AB3EC /* icon_low.png in Resources */,
 				58A5E92217B2470C009AB3EC /* icon_not_bad.png in Resources */,
+				ECE013F01FAFC5AA009A481E /* Launch Screen.storyboard in Resources */,
 				58A5E92317B2470C009AB3EC /* icon_very_good.png in Resources */,
 				58A5E92417B2470C009AB3EC /* icon_very_low.png in Resources */,
 				078F567417B36BC8000F4895 /* Default-568h@2x.png in Resources */,
@@ -2319,13 +2323,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "Anchor/ReliefLink-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
@@ -2336,7 +2339,7 @@
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2346,14 +2349,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "Anchor/ReliefLink-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
@@ -2365,7 +2367,7 @@
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
