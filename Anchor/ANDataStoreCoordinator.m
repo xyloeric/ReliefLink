@@ -237,19 +237,19 @@ static NSString *const _TwitterAlertShown = @"TwitterAlertShown";
                 notification.repeatInterval = 0;
                 break;
             case 1:
-                notification.repeatInterval = NSHourCalendarUnit;
+                notification.repeatInterval = NSCalendarUnitHour;
                 break;
             case 2:
-                notification.repeatInterval = NSDayCalendarUnit;
+                notification.repeatInterval = NSCalendarUnitDay;
                 break;
             case 3:
-                notification.repeatInterval = NSWeekCalendarUnit;
+                notification.repeatInterval = NSCalendarUnitWeekOfYear;
                 break;
             case 4:
-                notification.repeatInterval = NSMonthCalendarUnit;
+                notification.repeatInterval = NSCalendarUnitMonth;
                 break;
             case 5:
-                notification.repeatInterval = NSYearCalendarUnit;
+                notification.repeatInterval = NSCalendarUnitYear;
                 break;
             default:
                 break;
@@ -327,8 +327,8 @@ static NSString *const _TwitterAlertShown = @"TwitterAlertShown";
 - (void)createDemoData
 {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        NSDateComponents *nowComponents = [gregorian components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *nowComponents = [gregorian components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
         nowComponents.day = nowComponents.day - 10;
         NSDate *newDate = [gregorian dateFromComponents:nowComponents];
         

@@ -303,9 +303,9 @@
 
 - (NSDate *)getRoundedDateTimeWithDate:(NSDate *)date numOfMinutesAhead:(NSInteger)numOfMinute
 {
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSDateComponents *nowSecondComponent = [gregorian components:NSSecondCalendarUnit fromDate:date];
+    NSDateComponents *nowSecondComponent = [gregorian components:NSCalendarUnitSecond fromDate:date];
     
     NSInteger second = nowSecondComponent.second;
     NSInteger secondToBeSubstracted = (numOfMinute * 60) - second;

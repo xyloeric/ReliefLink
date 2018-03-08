@@ -13,7 +13,7 @@
 
 #define kTwitterAccounts @[@"TWLOHA", @"800273TALK", @"APAHealthyMinds", @"relieflink"]
 
-@interface ZLTwitterViewController () <NSURLConnectionDataDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIWebViewDelegate>
+@interface ZLTwitterViewController () <NSURLConnectionDataDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIWebViewDelegate, NSURLSessionDataDelegate>
 {
     NSInteger _currentPage;
 }
@@ -28,6 +28,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, retain) UIWebView *webView;
 @property (retain, nonatomic) IBOutlet NSLayoutConstraint *titleHeightConstraint;
+@property (nonatomic, retain) NSURLSession *session;
 @end
 
 @implementation ZLTwitterViewController
@@ -39,6 +40,9 @@
         self.connectionDict = [NSMutableDictionary dictionaryWithCapacity:2];
         self.dataDict = [NSMutableDictionary dictionaryWithCapacity:2];
         self.tweets = [NSMutableArray array];
+        
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
         
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
@@ -219,18 +223,16 @@
         [request setAccount:twitterAccount];
         NSURLRequest *preparedRequest = request.preparedURLRequest;
         
-        NSURLConnection *twitterConnection = [[NSURLConnection alloc] initWithRequest:preparedRequest delegate:self];
-        
-        NSRunLoop *loop = [NSRunLoop currentRunLoop];
-        [twitterConnection scheduleInRunLoop:loop forMode:NSRunLoopCommonModes];
+        NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:preparedRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [self handleSessionCompletionForTask:response];
+        }];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_connectionDict setValue:twitterConnection forKey:screenName];
+            [_connectionDict setValue:preparedRequest.URL forKey:screenName];
             [_dataDict setValue:[NSMutableData data] forKey:screenName];
-            [twitterConnection release];
         });
-
-        [loop run];
+        
+        [dataTask resume];
     });
 }
 
@@ -348,20 +350,19 @@
 }
 
 #pragma mark - NSURLConnectionDataDelegate
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSString *key = [[_connectionDict allKeysForObject:connection] firstObject];
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    NSString *key = [[_connectionDict allKeysForObject:dataTask.currentRequest.URL] firstObject];
     NSMutableData *dataContainer = [_dataDict valueForKey:key];
     
     [dataContainer appendData:data];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)handleSessionCompletionForTask:(NSURLResponse *)response {
     [_loadingIndicator stopAnimating];
     _refreshButton.hidden = NO;
     
-    NSString *key = [[_connectionDict allKeysForObject:connection] firstObject];
+    NSString *key = [[_connectionDict allKeysForObject:response.URL] firstObject];
     NSMutableData *dataContainer = [_dataDict valueForKey:key];
     
     NSError *error = nil;
@@ -371,6 +372,7 @@
         UIWindow *window = [[[UIApplication sharedApplication] windows] firstObject];
         if (window.rootViewController) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Twitter Account" message:@"Seems like we encountered a authentication issue with your twitter account, please verify it in the system setting of your phone" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             [window.rootViewController presentViewController:alert animated:YES completion:nil];
         }
     }
@@ -397,12 +399,6 @@
             [_dataDict setValue:nil forKey:key];
         });
     }
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [_loadingIndicator stopAnimating];
-    _refreshButton.hidden = NO;
 }
 
 #pragma mark - UIScrollViewDelegate

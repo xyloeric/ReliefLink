@@ -235,7 +235,7 @@
 			annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pharmLoc"];
 		}
 		
-		annView.pinColor = MKPinAnnotationColorRed;
+		annView.pinTintColor = [UIColor redColor];
 		annView.animatesDrop=TRUE;
 		
 		annView.canShowCallout = YES;

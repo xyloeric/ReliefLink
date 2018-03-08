@@ -9,10 +9,11 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "ANDataStoreCoordinator.h"
-#import "Crittercism.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 @property (nonatomic, retain) UIViewController *viewController;
+@property (nonatomic, retain) UNUserNotificationCenter *center;
 @end
 
 @implementation AppDelegate
@@ -24,6 +25,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_center release];
     [super dealloc];
 }
 
@@ -31,9 +33,18 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.center = [UNUserNotificationCenter currentNotificationCenter];
+    self.center.delegate = self;
+    
+    [self.center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [[ANDataStoreCoordinator shared] setManagedObjectContext:[self managedObjectContext]];
     
 //    [[ANDataStoreCoordinator shared] createDemoData];
@@ -48,15 +59,7 @@
     
     [self.window makeKeyAndVisible];
     
-    UILocalNotification *notification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
-    if (notification) {
-        [self handleReceivedLocalNotification:notification];
-    }
-    else {
-        [[ANDataStoreCoordinator shared] refreshScheduledStatusOfReminders];
-    }
-    
-    [Crittercism enableWithAppID: @"5252405e46b7c22b4c000007"];
+    [[ANDataStoreCoordinator shared] refreshScheduledStatusOfReminders];
     
     return YES;
 }
@@ -89,20 +92,20 @@
     [self saveContext];
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-    [self handleReceivedLocalNotification:notification];
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
+    
 }
 
-- (void)handleReceivedLocalNotification:(UILocalNotification *)notification
+- (void)handleReceivedUserNotification:(UNNotificationResponse *)response
 {
-    if (notification) {        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:notification.alertBody message:notification.userInfo[@"note"] preferredStyle:UIAlertControllerStyleAlert];
+    NSString *title = response.notification.request.content.title;
+    if (title.length > 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:response.notification.request.content.body message:title preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
         
         [[ANDataStoreCoordinator shared] refreshScheduledStatusOfReminders];
     }
-
 }
 
 - (void)saveContext
@@ -131,7 +134,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;

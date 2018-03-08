@@ -16,6 +16,6 @@
 @interface ANSelectionViewController : UIViewController
 @property (nonatomic, assign) id<ANSelectionViewControllerDelegate> delegate;
 
-- (id)initWithType:(NSInteger)selectionType;
+- (id)initWithType:(NSUInteger)selectionType;
 
 @end

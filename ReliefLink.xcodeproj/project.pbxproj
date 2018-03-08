@@ -94,7 +94,6 @@
 		0782F4E41802693900EEC943 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5810FF1417A646F5003E3297 /* AVFoundation.framework */; };
 		0782F4E51802693900EEC943 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5810FF0C17A63904003E3297 /* MediaPlayer.framework */; };
 		0782F4E61802693900EEC943 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E7FD7917A265F300C8DF70 /* ImageIO.framework */; };
-		0782F4E71802693900EEC943 /* libMWPhotoBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E7FD7517A2656E00C8DF70 /* libMWPhotoBrowser.a */; };
 		0782F4E81802693900EEC943 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8BB4C17A1C2F20034D831 /* MessageUI.framework */; };
 		0782F4E91802693900EEC943 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A091DB17989DD2005F049A /* MapKit.framework */; };
 		0782F4EA1802693900EEC943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5888AA1017973C7E00E57A46 /* QuartzCore.framework */; };
@@ -103,7 +102,6 @@
 		0782F4ED1802693900EEC943 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5888A9881794E07700E57A46 /* CoreGraphics.framework */; };
 		0782F4EE1802693900EEC943 /* libZLKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58923B5217E4CA3800B59C25 /* libZLKit.a */; };
 		0782F4EF1802693900EEC943 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5888A98A1794E07700E57A46 /* CoreData.framework */; };
-		0782F4F11802693900EEC943 /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07E7FD7717A2658500C8DF70 /* MWPhotoBrowser.bundle */; };
 		0782F4F21802693900EEC943 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5888A98F1794E07700E57A46 /* InfoPlist.strings */; };
 		0782F4F31802693900EEC943 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5888A9A81794E0E400E57A46 /* RootViewController.xib */; };
 		0782F4F41802693900EEC943 /* ANNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5888A9B51794E7E900E57A46 /* ANNavigationViewController.xib */; };
@@ -245,9 +243,8 @@
 		078F568717B4C02D000F4895 /* icon_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 078F568517B4C02D000F4895 /* icon_pause.png */; };
 		07AA3D9117B0C96D00B81ACE /* icon_music.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AA3D9017B0C96D00B81ACE /* icon_music.png */; };
 		07E7FD1E17A1087400C8DF70 /* ANImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E7FD1D17A1087400C8DF70 /* ANImageViewController.m */; };
-		07E7FD7617A2657500C8DF70 /* libMWPhotoBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E7FD7517A2656E00C8DF70 /* libMWPhotoBrowser.a */; };
-		07E7FD7817A2658500C8DF70 /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07E7FD7717A2658500C8DF70 /* MWPhotoBrowser.bundle */; };
 		07E7FD7A17A265F300C8DF70 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E7FD7917A265F300C8DF70 /* ImageIO.framework */; };
+		3C84ADE90FA244E33A865030 /* libPods-ReliefLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5D385D4D21EF886242FCEA /* libPods-ReliefLink.a */; };
 		5810FE8B17A5B31B003E3297 /* ReminderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5810FE8917A5B31B003E3297 /* ReminderDetailViewController.m */; };
 		5810FE8C17A5B31B003E3297 /* ReminderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5810FE8A17A5B31B003E3297 /* ReminderDetailViewController.xib */; };
 		5810FE9017A5B965003E3297 /* ANReminderEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5810FE8F17A5B965003E3297 /* ANReminderEditCell.m */; };
@@ -449,36 +446,12 @@
 		58DF1A0617B3854B00039B4D /* ImageAndTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A0517B3854B00039B4D /* ImageAndTitleCell.xib */; };
 		58DF1A1E17B43F1D00039B4D /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */; };
 		58DF1A2117B43F2000039B4D /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF1A2017B43F2000039B4D /* AppIcon.png */; };
-		99C41969197C674600E29AF5 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 99C41968197C674600E29AF5 /* dsym_upload.sh */; };
-		99C4196B197C675000E29AF5 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */; };
+		EC7208D1204F680500E0122F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7208D0204F680500E0122F /* UserNotifications.framework */; };
 		ECE013F01FAFC5AA009A481E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE013EF1FAFC5AA009A481E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0782F4951802693900EEC943 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C6F96C314AF704100F8389A;
-			remoteInfo = MWPhotoBrowser;
-		};
-		07E7FD7417A2656E00C8DF70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C6F96C414AF704100F8389A;
-			remoteInfo = MWPhotoBrowser;
-		};
-		58923BB117E8C51000B59C25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C6F96C314AF704100F8389A;
-			remoteInfo = MWPhotoBrowser;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		03B46E1B1C1BF4D5DC3D6D28 /* Pods-ReliefLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReliefLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReliefLink/Pods-ReliefLink.debug.xcconfig"; sourceTree = "<group>"; };
 		0746B8F717A2698500B02894 /* icon_x_white1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_x_white1.png; sourceTree = "<group>"; };
 		0746B8F817A2698500B02894 /* icon_x_white1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_x_white1@2x.png"; sourceTree = "<group>"; };
 		0746B8F917A2698500B02894 /* icon_x_white1_hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_x_white1_hi.png; sourceTree = "<group>"; };
@@ -491,9 +464,6 @@
 		0746B91817A7B29A00B02894 /* F3BarGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3BarGauge.m; sourceTree = "<group>"; };
 		0782F57B1802693900EEC943 /* ReliefLink beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReliefLink beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782F57C1802693A00EEC943 /* ReliefLink copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ReliefLink copy-Info.plist"; path = "/Users/eric/Documents/ReliefLink/ReliefLink copy-Info.plist"; sourceTree = "<absolute>"; };
-		0782F57F180278B600EEC943 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
-		0782F580180278B600EEC943 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		0782F581180278B600EEC943 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
 		0782F5881802793200EEC943 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		078F567317B36BC8000F4895 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		078F567517B36C89000F4895 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -506,8 +476,6 @@
 		07CC061717A1065B00FDF83A /* ZLCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCard.h; sourceTree = "<group>"; };
 		07E7FD1C17A1087400C8DF70 /* ANImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageViewController.h; sourceTree = "<group>"; };
 		07E7FD1D17A1087400C8DF70 /* ANImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageViewController.m; sourceTree = "<group>"; };
-		07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MWPhotoBrowser.xcodeproj; path = Anchor/MWPhotoBrowser/MWPhotoBrowser.xcodeproj; sourceTree = "<group>"; };
-		07E7FD7717A2658500C8DF70 /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MWPhotoBrowser.bundle; path = Anchor/MWPhotoBrowser/MWPhotoBrowser.bundle; sourceTree = "<group>"; };
 		07E7FD7917A265F300C8DF70 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		5810FE8817A5B31B003E3297 /* ReminderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderDetailViewController.h; sourceTree = "<group>"; };
 		5810FE8917A5B31B003E3297 /* ReminderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderDetailViewController.m; sourceTree = "<group>"; };
@@ -792,8 +760,9 @@
 		58DF1A0517B3854B00039B4D /* ImageAndTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAndTitleCell.xib; sourceTree = "<group>"; };
 		58DF1A1D17B43F1D00039B4D /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
 		58DF1A2017B43F2000039B4D /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
-		99C41968197C674600E29AF5 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
+		6F5D385D4D21EF886242FCEA /* libPods-ReliefLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReliefLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14DED68EEDF8E30CC94316E /* Pods-ReliefLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReliefLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReliefLink/Pods-ReliefLink.release.xcconfig"; sourceTree = "<group>"; };
+		EC7208D0204F680500E0122F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		ECE013EF1FAFC5AA009A481E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -810,7 +779,6 @@
 				0782F4E41802693900EEC943 /* AVFoundation.framework in Frameworks */,
 				0782F4E51802693900EEC943 /* MediaPlayer.framework in Frameworks */,
 				0782F4E61802693900EEC943 /* ImageIO.framework in Frameworks */,
-				0782F4E71802693900EEC943 /* libMWPhotoBrowser.a in Frameworks */,
 				0782F4E81802693900EEC943 /* MessageUI.framework in Frameworks */,
 				0782F4E91802693900EEC943 /* MapKit.framework in Frameworks */,
 				0782F4EA1802693900EEC943 /* QuartzCore.framework in Frameworks */,
@@ -826,6 +794,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7208D1204F680500E0122F /* UserNotifications.framework in Frameworks */,
 				0782F5891802793200EEC943 /* SystemConfiguration.framework in Frameworks */,
 				58A5E8F517B22C60009AB3EC /* CoreLocation.framework in Frameworks */,
 				58256B0917A97A9C0020C754 /* Social.framework in Frameworks */,
@@ -834,16 +803,15 @@
 				5810FF1517A646F6003E3297 /* AVFoundation.framework in Frameworks */,
 				5810FF0D17A63905003E3297 /* MediaPlayer.framework in Frameworks */,
 				07E7FD7A17A265F300C8DF70 /* ImageIO.framework in Frameworks */,
-				07E7FD7617A2657500C8DF70 /* libMWPhotoBrowser.a in Frameworks */,
 				58D8BB4D17A1C2F20034D831 /* MessageUI.framework in Frameworks */,
 				58A091DC17989DD2005F049A /* MapKit.framework in Frameworks */,
 				5888AA1117973C7E00E57A46 /* QuartzCore.framework in Frameworks */,
-				99C4196B197C675000E29AF5 /* libCrittercism_v4_3_4.a in Frameworks */,
 				5888A9851794E07700E57A46 /* UIKit.framework in Frameworks */,
 				5888A9871794E07700E57A46 /* Foundation.framework in Frameworks */,
 				5888A9891794E07700E57A46 /* CoreGraphics.framework in Frameworks */,
 				58923B5317E4CA3800B59C25 /* libZLKit.a in Frameworks */,
 				5888A98B1794E07700E57A46 /* CoreData.framework in Frameworks */,
+				3C84ADE90FA244E33A865030 /* libPods-ReliefLink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,21 +838,8 @@
 		0782F57D1802787800EEC943 /* External Libs */ = {
 			isa = PBXGroup;
 			children = (
-				0782F57E180278B600EEC943 /* CrittercismSDK */,
 			);
 			name = "External Libs";
-			sourceTree = "<group>";
-		};
-		0782F57E180278B600EEC943 /* CrittercismSDK */ = {
-			isa = PBXGroup;
-			children = (
-				0782F57F180278B600EEC943 /* CRFilter.h */,
-				0782F580180278B600EEC943 /* Crittercism.h */,
-				0782F581180278B600EEC943 /* CrittercismDelegate.h */,
-				99C41968197C674600E29AF5 /* dsym_upload.sh */,
-				99C4196A197C675000E29AF5 /* libCrittercism_v4_3_4.a */,
-			);
-			path = CrittercismSDK;
 			sourceTree = "<group>";
 		};
 		07CC061417A1065000FDF83A /* CardView */ = {
@@ -896,12 +851,13 @@
 			name = CardView;
 			sourceTree = "<group>";
 		};
-		07E7FD7117A2656D00C8DF70 /* Products */ = {
+		435BF962E9600E7D884D5135 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				07E7FD7517A2656E00C8DF70 /* libMWPhotoBrowser.a */,
+				03B46E1B1C1BF4D5DC3D6D28 /* Pods-ReliefLink.debug.xcconfig */,
+				B14DED68EEDF8E30CC94316E /* Pods-ReliefLink.release.xcconfig */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5810FE9A17A5B9F2003E3297 /* Icons */ = {
@@ -1399,8 +1355,6 @@
 				5810FF1417A646F5003E3297 /* AVFoundation.framework */,
 				5810FF0C17A63904003E3297 /* MediaPlayer.framework */,
 				07E7FD7917A265F300C8DF70 /* ImageIO.framework */,
-				07E7FD7717A2658500C8DF70 /* MWPhotoBrowser.bundle */,
-				07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */,
 				58D8BB4C17A1C2F20034D831 /* MessageUI.framework */,
 				58A091DB17989DD2005F049A /* MapKit.framework */,
 				5888AA1017973C7E00E57A46 /* QuartzCore.framework */,
@@ -1408,6 +1362,7 @@
 				5888A9831794E07600E57A46 /* Frameworks */,
 				5888A9821794E07600E57A46 /* Products */,
 				0782F57C1802693A00EEC943 /* ReliefLink copy-Info.plist */,
+				435BF962E9600E7D884D5135 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1423,11 +1378,13 @@
 		5888A9831794E07600E57A46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC7208D0204F680500E0122F /* UserNotifications.framework */,
 				0782F5881802793200EEC943 /* SystemConfiguration.framework */,
 				5888A9841794E07600E57A46 /* UIKit.framework */,
 				5888A9861794E07700E57A46 /* Foundation.framework */,
 				5888A9881794E07700E57A46 /* CoreGraphics.framework */,
 				5888A98A1794E07700E57A46 /* CoreData.framework */,
+				6F5D385D4D21EF886242FCEA /* libPods-ReliefLink.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1666,7 +1623,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0782F4941802693900EEC943 /* PBXTargetDependency */,
 			);
 			name = "ReliefLink beta";
 			productName = Anchor;
@@ -1677,14 +1633,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5888A9A31794E07700E57A46 /* Build configuration list for PBXNativeTarget "ReliefLink" */;
 			buildPhases = (
+				96F8013493A426E0006DA608 /* [CP] Check Pods Manifest.lock */,
 				5888A97D1794E07600E57A46 /* Sources */,
 				5888A97E1794E07600E57A46 /* Frameworks */,
 				5888A97F1794E07600E57A46 /* Resources */,
+				D0C1E244D3623E25C22D0932 /* [CP] Embed Pods Frameworks */,
+				EC541C1FCD0F25476B4158DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				58923BB217E8C51000B59C25 /* PBXTargetDependency */,
 			);
 			name = ReliefLink;
 			productName = Anchor;
@@ -1697,7 +1655,7 @@
 		5888A9791794E07600E57A46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = ericli;
 				TargetAttributes = {
 					5888A9801794E07600E57A46 = {
@@ -1715,12 +1673,6 @@
 			mainGroup = 5888A9781794E07600E57A46;
 			productRefGroup = 5888A9821794E07600E57A46 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 07E7FD7117A2656D00C8DF70 /* Products */;
-					ProjectRef = 07E7FD7017A2656D00C8DF70 /* MWPhotoBrowser.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5888A9801794E07600E57A46 /* ReliefLink */,
@@ -1729,22 +1681,11 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		07E7FD7517A2656E00C8DF70 /* libMWPhotoBrowser.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMWPhotoBrowser.a;
-			remoteRef = 07E7FD7417A2656E00C8DF70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		0782F4F01802693900EEC943 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0782F4F11802693900EEC943 /* MWPhotoBrowser.bundle in Resources */,
 				0782F4F21802693900EEC943 /* InfoPlist.strings in Resources */,
 				0782F4F31802693900EEC943 /* RootViewController.xib in Resources */,
 				0782F4F41802693900EEC943 /* ANNavigationViewController.xib in Resources */,
@@ -1883,7 +1824,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E7FD7817A2658500C8DF70 /* MWPhotoBrowser.bundle in Resources */,
 				5888A9911794E07700E57A46 /* InfoPlist.strings in Resources */,
 				5888A9AA1794E0E400E57A46 /* RootViewController.xib in Resources */,
 				5888A9B71794E7E900E57A46 /* ANNavigationViewController.xib in Resources */,
@@ -1891,7 +1831,6 @@
 				5888A9C71795DA4B00E57A46 /* ANNavigationCell.xib in Resources */,
 				5888A9EA1795EAFA00E57A46 /* button_universal_38x38a.png in Resources */,
 				5888A9FE1797126100E57A46 /* MoodEntryViewController.xib in Resources */,
-				99C41969197C674600E29AF5 /* dsym_upload.sh in Resources */,
 				58A091D817989100005F049A /* SingleGridCell.xib in Resources */,
 				58A091DA1798910C005F049A /* DualGridCell.xib in Resources */,
 				58625C95179C6C0B00F22B82 /* icon_settings.png in Resources */,
@@ -2021,6 +1960,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96F8013493A426E0006DA608 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReliefLink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C1E244D3623E25C22D0932 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReliefLink/Pods-ReliefLink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC541C1FCD0F25476B4158DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReliefLink/Pods-ReliefLink-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReliefLink/Pods-ReliefLink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0782F4961802693900EEC943 /* Sources */ = {
@@ -2183,19 +2176,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		0782F4941802693900EEC943 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MWPhotoBrowser;
-			targetProxy = 0782F4951802693900EEC943 /* PBXContainerItemProxy */;
-		};
-		58923BB217E8C51000B59C25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MWPhotoBrowser;
-			targetProxy = 58923BB117E8C51000B59C25 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		5888A98F1794E07700E57A46 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -2219,13 +2199,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "ReliefLink copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
-					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulilu.relieflink;
 				PRODUCT_NAME = "ReliefLink beta";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E0A7366-1F8E-498D-A15D-9C4E320005C2";
@@ -2246,13 +2226,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Anchor/ReliefLink-Prefix.pch";
 				INFOPLIST_FILE = "ReliefLink copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
-					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulilu.relieflink;
 				PRODUCT_NAME = "ReliefLink beta";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E67FFBC6-5B8B-4FE7-BA9C-A06050F69166";
@@ -2268,26 +2248,42 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_GROUP = admin;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -2299,19 +2295,34 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_GROUP = admin;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2320,6 +2331,7 @@
 		};
 		5888A9A41794E07700E57A46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B46E1B1C1BF4D5DC3D6D28 /* Pods-ReliefLink.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2332,13 +2344,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
-					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
-					"$(PROJECT_DIR)/Anchor/CrittercismSDK",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulilu.relieflink;
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2346,6 +2357,7 @@
 		};
 		5888A9A51794E07700E57A46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B14DED68EEDF8E30CC94316E /* Pods-ReliefLink.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2359,14 +2371,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Anchor",
-					/Users/eric/Documents/ReliefLink/Anchor/CrittercismSDK,
-					"$(PROJECT_DIR)/Anchor/CrittercismSDK",
 				);
 				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulilu.relieflink;
 				PRODUCT_NAME = ReliefLink;
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Anchor/MWPhotoBrowser\"/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "";
 				WRAPPER_EXTENSION = app;
 			};

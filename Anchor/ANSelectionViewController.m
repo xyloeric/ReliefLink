@@ -21,11 +21,11 @@
 
 @implementation ANSelectionViewController
 
-- (id)initWithType:(NSInteger)selectionType
+- (id)initWithType:(NSUInteger)selectionType
 {
     self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
-        self.selectionType = selectionType;
+        self.selectionType = (ANSelectionViewControllerType)selectionType;
     }
     return self;
 }

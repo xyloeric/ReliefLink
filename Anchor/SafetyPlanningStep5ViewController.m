@@ -235,7 +235,6 @@
         
         ProfessionalToContact *ptc = [_fetchedResultsController objectAtIndexPath:indexPath];
         cell.professional = ptc;
-        NSLog(@"%@ %@, %i %i", ptc.name, ptc.professionalType, indexPath.section, indexPath.row);
         return cell;
     }
     else {
@@ -344,6 +343,8 @@
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
+        default:
+            break;
     }
 }
 
@@ -366,11 +367,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            if (!self.searchDisplayController.isActive) {
-                [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            } else {
-                    // I currently don't do anything if the search display controller is active, because it is throwing similar errors.
-            }
+            [tableView reloadData];
             break;
             
         case NSFetchedResultsChangeMove:

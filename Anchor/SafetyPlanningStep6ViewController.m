@@ -380,6 +380,8 @@
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
+        default:
+            break;
     }
 }
 
@@ -402,11 +404,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            if (!self.searchDisplayController.isActive) {
-                [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            } else {
-                    // I currently don't do anything if the search display controller is active, because it is throwing similar errors.
-            }
+            [tableView reloadData];
             break;
             
         case NSFetchedResultsChangeMove:

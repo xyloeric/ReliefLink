@@ -118,46 +118,36 @@
         [_loadingIndicator startAnimating];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:profileUrl];
-        NSURLConnection *imageConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        self.imageConnection = imageConnection;
-        [imageConnection release];
-        [_imageConnection start];
+        
+        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [self.imageData appendData:data];
+            
+            UIImage *image = [UIImage imageWithData:_imageData];
+            [_loadingIndicator stopAnimating];
+            if (image) {
+                NSMutableString *urlString = [_tweet[@"user"][@"profile_image_url"] mutableCopy];
+                [urlString replaceOccurrencesOfString:@"normal" withString:@"bigger" options:0 range:NSMakeRange(urlString.length - 10, 10)];
+                
+                NSURL *profileUrl = [NSURL URLWithString:urlString];
+                [urlString release];
+                
+                NSString *filePath = [NSString stringWithFormat:@"%@/%@", [self cacheDirectory], [profileUrl.pathComponents lastObject]];
+                [_imageData writeToFile:filePath atomically:YES];
+                
+                _profileImageView.image = image;
+                self.imageConnection = nil;
+                self.imageData = [NSMutableData data];
+            }
+            else if (_retryCount < 5){
+                _retryCount ++;
+                [self updateProfilePicture];
+            }
+        }];
+        
+        [task resume];
     }
 }
 
-#pragma mark - NSURLConenctionDataDelegate
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [_imageData appendData:data];
-}
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    UIImage *image = [UIImage imageWithData:_imageData];
-    [_loadingIndicator stopAnimating];
-    if (image) {
-        NSMutableString *urlString = [_tweet[@"user"][@"profile_image_url"] mutableCopy];
-        [urlString replaceOccurrencesOfString:@"normal" withString:@"bigger" options:0 range:NSMakeRange(urlString.length - 10, 10)];
-        
-        NSURL *profileUrl = [NSURL URLWithString:urlString];
-        [urlString release];
-        
-        NSString *filePath = [NSString stringWithFormat:@"%@/%@", [self cacheDirectory], [profileUrl.pathComponents lastObject]];
-        [_imageData writeToFile:filePath atomically:YES];
-        
-        _profileImageView.image = image;
-        self.imageConnection = nil;
-        self.imageData = [NSMutableData data];
-    }
-    else if (_retryCount < 5){
-        _retryCount ++;
-        [self updateProfilePicture];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [_loadingIndicator stopAnimating];
-}
 
 @end

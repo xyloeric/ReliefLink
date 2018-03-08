@@ -16,7 +16,7 @@
 
 @implementation ZLTextField {
     NSBundle *_bundle;
-    NSUInteger _textFieldColor;
+    DRBaseTextFieldColor _textFieldColor;
 }
 
 - (void)useDefaultInset {

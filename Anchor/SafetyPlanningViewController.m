@@ -155,7 +155,7 @@
 
 - (ZLCard *)cardView:(ZLCardView *)cardView viewAtIndex:(NSInteger)index
 {
-    NSString *cardIdentifier = [NSString stringWithFormat:@"%i", index];
+    NSString *cardIdentifier = [NSString stringWithFormat:@"%li", (long)index];
     ZLCard *card = [cardView dequeueCardFromCardView:cardView withReuseIdentifier:cardIdentifier];
     
     if (!card) {

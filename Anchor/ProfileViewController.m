@@ -410,6 +410,7 @@
 	}
 	else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Your device doesn't have camera" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
 		return;
 	}

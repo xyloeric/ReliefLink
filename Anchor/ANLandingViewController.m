@@ -28,7 +28,7 @@
 #import "ResourceViewController.h"
 #import "CopingViewController.h"
 
-#import "MWPhotoBrowser.h"
+#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "ZLGenericAnnotation.h"
 #import "Mood.h"
 #import "SuicidalThought.h"
@@ -284,6 +284,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 	}
 	else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Your device doesn't have camera" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
 		return;
 	}
@@ -407,7 +408,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
                 UILabel *label1 = [[[UILabel alloc] init] autorelease];
                 label1.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:40];
                 label1.textColor = [UIColor orangeColor];
-                label1.text = [NSString stringWithFormat:@"%i", [[ANDataStoreCoordinator shared] numberOfObjectsOfEntity:@"Reminder"]];
+                label1.text = [NSString stringWithFormat:@"%li", (long)[[ANDataStoreCoordinator shared] numberOfObjectsOfEntity:@"Reminder"]];
                 label1.textAlignment = NSTextAlignmentCenter;
                 UILabel *label2 = [[[UILabel alloc] init] autorelease];
                 label2.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:40];
@@ -428,12 +429,12 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
                 UILabel *label1 = [[[UILabel alloc] init] autorelease];
                 label1.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:40];
                 label1.textColor = [UIColor redColor];
-                label1.text = [NSString stringWithFormat:@"%i", [_mapAnnotations count]];
+                label1.text = [NSString stringWithFormat:@"%li", (long)[_mapAnnotations count]];
                 label1.textAlignment = NSTextAlignmentCenter;
                 UILabel *label2 = [[[UILabel alloc] init] autorelease];
                 label2.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:40];
                 label2.textColor = [UIColor purpleColor];
-                label2.text = [NSString stringWithFormat:@"%i", [ANDataStoreCoordinator shared].relieflinkTweetCount];
+                label2.text = [NSString stringWithFormat:@"%li", (long)[ANDataStoreCoordinator shared].relieflinkTweetCount];
                 label2.textAlignment = NSTextAlignmentCenter;
                 
                 [cell setGrid1Title:@"Help Near You" grid1ContentView:label1 grid2Title:@"Tweets from Us" grid2ContentView:label2];
@@ -583,7 +584,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 - (void)showPhotoViewerFromRect:(CGRect)rect
 {
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-    [browser setInitialPageIndex:_randomImageIndex];
+    [browser setCurrentPhotoIndex:_randomImageIndex];
     browser.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:browser animated:YES completion:^{}];
     [browser release];
@@ -604,7 +605,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 - (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
     if (index < 14)
     {
-        MWPhoto *photo = [MWPhoto photoWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%i.jpg", index]]];
+        MWPhoto *photo = [MWPhoto photoWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%li.jpg", (long)index]]];
         return photo;
     }
     
@@ -702,7 +703,7 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 
 - (void)zoomMapViewToFitArrayOfAnnotations:(NSArray *)annotations animated:(BOOL)animated
 {
-	int count = [annotations count];
+	NSUInteger count = [annotations count];
 	if ( count == 0) {
 		return;
 	}
@@ -739,6 +740,10 @@ static NSString *DualGridCellIdentifier = @"DualGridCell";
 	
 	[_mapView setRegion:region animated:animated];
 }
+
+//- (void)menuButtonTapped:(id)sender {
+//
+//}
 
 #pragma mark SingleGridCellDelegate
 - (void)SingleGridCellDidClickButton:(SingleGridCell *)cell

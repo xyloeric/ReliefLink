@@ -12,17 +12,17 @@
 #import "F3BarGauge.h"
 #import "ZLWebViewController.h"
 
-#define kMindfulnessBreathing @{@"title": @"Mindfulness of Breathing",@"url": @"http://medweb.mit.edu/audio/mindfulness_of_breathing.mp3", @"description": @"Mindfulness is an amazing tool for stress management and overall wellness because it can be used at virtually any time and can quickly bring lasting results"}
+#define kMindfulnessBreathing @{@"title": @"Mindfulness of Breathing",@"url": @"https://medical.mit.edu/sites/default/files/mindfulness_of_breathing.mp3", @"description": @"Mindfulness is an amazing tool for stress management and overall wellness because it can be used at virtually any time and can quickly bring lasting results"}
 
-#define kBodyScan @{@"title": @"Mindefulness Meditation - Body Scan", @"url": @"http://medweb.mit.edu/audio/body_scan.mp3"}
+#define kBodyScan @{@"title": @"Mindefulness Meditation - Body Scan", @"url": @"https://medical.mit.edu/sites/default/files/body_scan.mp3"}
 
-#define kGuidedMeditation @{@"title": @"Relax: Guided Meditation", @"url": @"http://medweb.mit.edu/audio/guided_meditation.mp3"}
+#define kGuidedMeditation @{@"title": @"Relax: Guided Meditation", @"url": @"https://medical.mit.edu/sites/default/files/guided_meditation.mp3"}
 
-#define kEnergizingBreath @{@"title": @"Revive Yourself: Energizing Breath", @"url": @"http://medweb.mit.edu/audio/energize.mp3"}
+#define kEnergizingBreath @{@"title": @"Revive Yourself: Energizing Breath", @"url": @"https://medical.mit.edu/sites/default/files/energize.mp3"}
 
-#define kRelaxationVisualization @{@"title": @"Guided Visualization for Relaxation", @"url": @"http://medweb.mit.edu/audio/guided_visualization.mp3"}
+#define kRelaxationVisualization @{@"title": @"Guided Visualization for Relaxation", @"url": @"https://medical.mit.edu/sites/default/files/guided_visualization.mp3"}
 
-#define kProgressiveRelexation @{@"title": @"Progressive Relaxation: Release Muscle Tension", @"url": @"http://medweb.mit.edu/audio/progressive_relaxation.mp3"}
+#define kProgressiveRelexation @{@"title": @"Progressive Relaxation: Release Muscle Tension", @"url": @"https://medical.mit.edu/sites/default/files/progressive_relaxation.mp3"}
 
 @interface ZLMusicPlayerViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioPlayerDelegate>
 {
@@ -235,7 +235,7 @@
         vc.titleBarColor = self.view.backgroundColor;
         vc.title = @"";
         [self presentViewController:vc animated:YES completion:^{
-            [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://medweb.mit.edu/wellness/resources/downloads.html"]]];
+            [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://medical.mit.edu/community/sleep/resources"]]];
         }];
         [vc release];
     }

@@ -93,21 +93,21 @@
                     break;
                 case 4:
                 {
-                    ZLWebViewController *vc = [[ZLWebViewController alloc] init];
+                    ZLLocalMapViewController *vc = [[ZLLocalMapViewController alloc] init];
                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                    vc.titleBarColor = _titleBar.backgroundColor;
-                    vc.title = @"Relaxing Music";
-                    [self presentViewController:vc animated:YES completion:^{
-                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://sc9106.xpx.pl:9106/listen.pls"]]];
-                    }];
+                    [self presentViewController:vc animated:YES completion:^{}];
                     [vc release];
                 }
                     break;
                 case 5:
                 {
-                    ZLLocalMapViewController *vc = [[ZLLocalMapViewController alloc] init];
+                    ZLWebViewController *vc = [[ZLWebViewController alloc] init];
                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                    [self presentViewController:vc animated:YES completion:^{}];
+                    vc.titleBarColor = _titleBar.backgroundColor;
+                    vc.title = @"Therapist";
+                    [self presentViewController:vc animated:YES completion:^{
+                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.psychologytoday.com/us/therapists?tr=Hdr_Brand"]]];
+                    }];
                     [vc release];
                 }
                     break;
@@ -116,9 +116,9 @@
                     ZLWebViewController *vc = [[ZLWebViewController alloc] init];
                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                     vc.titleBarColor = _titleBar.backgroundColor;
-                    vc.title = @"Therapist";
+                    vc.title = @"Support Group";
                     [self presentViewController:vc animated:YES completion:^{
-                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://therapists.psychologytoday.com/rms/?tr=Hdr_Brand"]]];
+                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://afsp.org/find-support/ive-lost-someone/find-a-support-group/"]]];
                     }];
                     [vc release];
                 }
@@ -128,21 +128,9 @@
                     ZLWebViewController *vc = [[ZLWebViewController alloc] init];
                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                     vc.titleBarColor = _titleBar.backgroundColor;
-                    vc.title = @"Support Group";
-                    [self presentViewController:vc animated:YES completion:^{
-                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.suicidology.org/suicide-support-group-directory"]]];
-                    }];
-                    [vc release];
-                }
-                    break;
-                case 8:
-                {
-                    ZLWebViewController *vc = [[ZLWebViewController alloc] init];
-                    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                    vc.titleBarColor = _titleBar.backgroundColor;
                     vc.title = @"Treatments";
                     [self presentViewController:vc animated:YES completion:^{
-                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://findtreatment.samhsa.gov"]]];
+                        [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://findtreatment.samhsa.gov"]]];
                     }];
                     [vc release];
                 }
@@ -170,7 +158,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,22 +180,18 @@
             cell.iconImageView.image = [UIImage imageNamed:@"icon_twitter_2"];
             break;
         case 2:
-            cell.titleLabel.text = @"Relaxing Music";
-            cell.iconImageView.image = [UIImage imageNamed:@"icon_music_1"];
-            break;
-        case 3:
             cell.titleLabel.text = @"Help Near You";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 4:
+        case 3:
             cell.titleLabel.text = @"Therapist Locator";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 5:
+        case 4:
             cell.titleLabel.text = @"Support Group Finder";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
-        case 6:
+        case 5:
             cell.titleLabel.text = @"Treatment Services Locator";
             cell.iconImageView.image = [UIImage imageNamed:@"icon_map"];
             break;
@@ -239,20 +223,20 @@
             
             break;
         case 2:
-        {            
-            ZLWebViewController *vc = [[ZLWebViewController alloc] init];
-            vc.titleBarColor = _titleBar.backgroundColor;
-            vc.title = @"Relaxing Music";
-            [self presentViewController:vc animated:YES completion:^{
-                [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://sc9106.xpx.pl:9106/listen.pls"]]];
-            }];
+        {
+            ZLLocalMapViewController *vc = [[ZLLocalMapViewController alloc] init];
+            [self presentViewController:vc animated:YES completion:^{}];
             [vc release];
         }
             break;
         case 3:
         {
-            ZLLocalMapViewController *vc = [[ZLLocalMapViewController alloc] init];
-            [self presentViewController:vc animated:YES completion:^{}];
+            ZLWebViewController *vc = [[ZLWebViewController alloc] init];
+            vc.titleBarColor = _titleBar.backgroundColor;
+            vc.title = @"Therapist";
+            [self presentViewController:vc animated:YES completion:^{
+                [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.psychologytoday.com/us/therapists?tr=Hdr_Brand"]]];
+            }];
             [vc release];
         }
             break;
@@ -260,9 +244,9 @@
         {
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;
-            vc.title = @"Therapist";
+            vc.title = @"Support Group";
             [self presentViewController:vc animated:YES completion:^{
-                [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://therapists.psychologytoday.com/rms/?tr=Hdr_Brand"]]];
+                [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://afsp.org/find-support/ive-lost-someone/find-a-support-group/"]]];
             }];
             [vc release];
         }
@@ -271,20 +255,9 @@
         {
             ZLWebViewController *vc = [[ZLWebViewController alloc] init];
             vc.titleBarColor = _titleBar.backgroundColor;
-            vc.title = @"Support Group";
-            [self presentViewController:vc animated:YES completion:^{
-                [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.suicidology.org/suicide-support-group-directory"]]];
-            }];
-            [vc release];
-        }
-            break;
-        case 6:
-        {
-            ZLWebViewController *vc = [[ZLWebViewController alloc] init];
-            vc.titleBarColor = _titleBar.backgroundColor;
             vc.title = @"Treatments";
             [self presentViewController:vc animated:YES completion:^{
-               [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://findtreatment.samhsa.gov"]]];
+               [vc loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://findtreatment.samhsa.gov"]]];
             }];
             [vc release];
         }
